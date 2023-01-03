@@ -8,28 +8,30 @@ const Header = () => {
                 <nav>
                     <NavLink
                         className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_1 header_nav_link_active" : "header_nav_link header_nav_link_1 header_nav_link_inactive")} 
-                        href=""
+                        title='Accueil'
+                        end to='/'
                     >
-                        Home
+                        Accueil
                     </NavLink>
                     <NavLink 
                         className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_1 header_nav_link_active" : "header_nav_link header_nav_link_1 header_nav_link_inactive")}
-                        href=""
+                        title='Ajouter une sauce'
                     >
-                        Add sauce
+                        Ajouter une sauce
                     </NavLink>
                 </nav>
                 <img src={logo} alt='hottakes-logo' className="header_logo" />
                 <nav>
                     <NavLink 
                         className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_2 header_nav_link_active" : "header_nav_link header_nav_link_2 header_nav_link_inactive")}
-                        href=""
+                        title='Mon compte'
                     >
-                        Account
+                        Mon compte
                     </NavLink>
                     <NavLink 
                         className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_2 header_nav_link_active" : "header_nav_link header_nav_link_2 header_nav_link_inactive")}
-                        href=""
+                        title='Se connecter/Se déconnecter'
+                        end to='Login'
                     >
                         Login/Log out
                     </NavLink>

@@ -1,14 +1,21 @@
 @import 'variables';
 @import 'fonts';
 @import 'Header';
+@import 'Login';
 
 html {
     background-color: $bg-clr;
     font-family: 'Raleway';
     font-size: 18px;
+    color: $primary-clr;
+    margin: auto;
 }
 
 a {
     text-decoration: none;
     color: $primary-clr;
+}
+
+.bold {
+    font-family: 'Raleway-Medium';
 }

@@ -13,6 +13,7 @@ const IndexRoutes = () => {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/login" element={<Login />}/>
                 {!isLoggedIn && <Route path="/" element={<Home />} />}
