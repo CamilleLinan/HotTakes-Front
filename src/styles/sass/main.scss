@@ -1,0 +1,14 @@
+@import 'variables';
+@import 'fonts';
+@import 'Header';
+
+html {
+    background-color: $bg-clr;
+    font-family: 'Raleway';
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: $primary-clr;
+}

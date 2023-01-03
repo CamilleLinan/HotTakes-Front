@@ -1,6 +1,11 @@
+import Header from "../components/Layout/Header"
+
 const Home = () => {
     return(
-        <>Hello depuis Home</>
+        <>
+            <Header />
+            <p>Hello depuis Home</p>
+        </>
     )
 }
 

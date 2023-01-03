@@ -1,0 +1,31 @@
+@import 'variables';
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 2 auto;
+    
+    
+    &_logo {
+        width: 400px;
+        margin-bottom: 5px;
+    }
+
+    &_nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 5px #ff00002e;
+            
+        &_link {
+            &_1 {
+                margin-left: 2rem;
+            }
+            &_2 {
+                margin-right: 2rem;
+            }
+        }
+    }
+}
