@@ -51,7 +51,7 @@ const SignUpForm = () => {
     const onSubmit = async (data) => {
         await axios({
             method: "post",
-            url: `http://localhost:5000/auth/signup`,
+            url: `http://localhost:5000/api/auth/signup`,
             data
         })
             .then(() => {
@@ -124,7 +124,7 @@ const SignUpForm = () => {
                     
                     {errorServer && <p className="error text_center bold">{errorServer.message}</p>}
 
-                    <button type="submit" className="btn_form bold">Créer un compte</button>
+                    <button type="submit" className="form_btn bold">Créer un compte</button>
                 </form>
             </>
         )}

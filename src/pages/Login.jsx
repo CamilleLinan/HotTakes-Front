@@ -2,6 +2,7 @@ import { useState } from 'react';
 import logo from '../styles/img/hottakes-logo.png'
 import SignInForm from '../components/Login/SignInForm';
 import SignUpForm from '../components/Login/SignUpForm';
+import { NavLink } from 'react-router-dom';
 
 
 const Login = () => {
@@ -30,6 +31,9 @@ const Login = () => {
                     {signInModal && <SignInForm />}
                 </article>
             </section>
+            <footer className='login_footer'>
+                <NavLink title='Accueil' end to='/' className='login_footer_navlink'>Aller à la page d'accueil</NavLink>
+            </footer>
         </div>
     )
 }
