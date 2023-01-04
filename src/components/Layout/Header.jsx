@@ -36,18 +36,18 @@ const Header = () => {
                     {isLoggedIn ? 
                     <NavLink 
                         className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_2 header_nav_link_active" : "header_nav_link header_nav_link_2 header_nav_link_inactive")}
-                        title='Se connecter/Se déconnecter'
+                        title='Se déconnecter'
                         onClick={authCtx.logout}
                         end to='Login'
                     >
-                        Log out
+                        Se déconnecter
                     </NavLink> :
                     <NavLink 
                     className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_2 header_nav_link_active" : "header_nav_link header_nav_link_2 header_nav_link_inactive")}
-                    title='Se connecter/Se déconnecter'
+                    title='Se connecter'
                     end to='Login'
                 >
-                    Login
+                    Se connecter
                 </NavLink> }
                 </nav>
             </div>

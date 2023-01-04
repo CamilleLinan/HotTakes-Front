@@ -1,0 +1,13 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    margin-left: -7px;
+    margin-right: -7px;
+    &_img {
+        margin-top: 106px;
+        height: 230px;
+        width: 100%;
+        object-fit: cover;
+        filter: brightness(0.9) saturate(0.8);
+    }
+}
