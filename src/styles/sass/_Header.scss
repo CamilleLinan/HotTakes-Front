@@ -1,0 +1,35 @@
+@import 'variables';
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 2 auto;
+    
+    
+    &_logo {
+        width: 370px;
+        margin: 1rem 0;
+    }
+
+    &_nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 5px #b800009f;
+            
+        &_link {
+            text-shadow: 0 0 10px #ff000074;
+            &:hover {
+                text-decoration: underline;
+            }
+            &_1 {
+                margin-left: 2rem;
+            }
+            &_2 {
+                margin-right: 2rem;
+            }
+        }
+    }
+}
