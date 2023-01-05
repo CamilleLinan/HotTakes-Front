@@ -31,11 +31,11 @@ const DisplaySauces = () => {
 
     return(
         <>
-        <h1 className="title_home center">Votez pour votre sauce piquante préférée !</h1>
+        <h1 className="title_home center bold">Votez pour votre sauce piquante préférée !</h1>
             <section className="sauces">
                 <div className="sauces_section_name">
                     <i className="sauces_section_name_icon">{fireIcon}</i>
-                    <h2 className="sauces_section_name_title">Toutes les sauces</h2>
+                    <h2 className="sauces_section_name_title bold">Toutes les sauces</h2>
                 </div>
                 {sauceData.length > 0 ?
                     <ul className="sauces_list">

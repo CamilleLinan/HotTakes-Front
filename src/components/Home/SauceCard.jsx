@@ -15,10 +15,10 @@ const SauceCard = (props) => {
                 <p className="card_figcaption_subtitle">par {props.manufacturer}</p>
             </figcaption>
             <div className='card_vote'>
-                <i>{thumbsUp}</i>
-                <span>{props.likes}</span>
-                <i>{thumbsDown}</i>
-                <span>{props.dislikes}</span>
+                <i className='card_vote_icon'>{thumbsUp}</i>
+                <span className='card_vote_number'>{props.likes}</span>
+                <i className='card_vote_icon'>{thumbsDown}</i>
+                <span className='card_vote_number'>{props.dislikes}</span>
             </div>
         </figure>
     )
