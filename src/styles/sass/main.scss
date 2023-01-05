@@ -3,6 +3,7 @@
 @import 'Header';
 @import 'Login';
 @import 'Banner';
+@import 'DisplaySauces';
 
 html {
     background-color: $bg-clr;
@@ -17,10 +18,18 @@ a {
     color: $primary-clr;
 }
 
-.bold {
-    font-family: 'Raleway-Medium';
+li {
+    list-style-type: none;
 }
 
 button {
     cursor: pointer;
+}
+
+.bold {
+    font-family: 'Raleway-Medium';
+}
+
+.center {
+    text-align: center;
 }

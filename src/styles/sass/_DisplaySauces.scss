@@ -1,0 +1,88 @@
+.title_home {
+    margin: 4rem 0;
+    font-size: 30px;
+    text-shadow: 0 0 10px #ff000074;
+}
+
+.sauces {
+    width: 95%;
+    margin: auto;
+    
+    &_section_name {
+        display: flex;
+        align-items: center;
+        &_icon {
+            margin: 0 0.5rem;
+            text-shadow: 0 0 10px #ff000074;
+            font-size: 22px;
+        }
+        &_title {
+            margin: 0;
+            text-shadow: 0 0 10px #ff000074;
+        }
+    }
+
+    &_list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        
+        & li {
+            width: 30%;
+            margin: 1rem;
+        }
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $primary-clr;
+    padding: 0.8rem;
+    
+    &_img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+    }
+
+    &_figcaption {
+        display: flex;
+        flex-direction: column;
+        
+        &_heat {
+            align-self: center;
+            margin: 0.5rem auto 0.5rem auto;
+        }
+        
+        &_title {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        &_subtitle {
+            margin-top: 5px;
+        }
+    }
+
+    &_vote {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        width: 30%;
+    }
+}
+
+.sauce_ratings {
+    align-self: center;
+    margin: 0.7rem auto 0.5rem auto;
+    font-size: 21px;
+    &_pepper {
+        &_grey {
+            color: grey;
+        }
+    }
+}

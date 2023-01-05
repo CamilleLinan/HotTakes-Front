@@ -1,4 +1,5 @@
 import Banner from "../components/Home/Banner"
+import DisplaySauces from "../components/Home/DisplaySauces"
 import Header from "../components/Layout/Header"
 
 const Home = () => {
@@ -6,7 +7,7 @@ const Home = () => {
         <>
             <Header />
             <Banner />
-            <p>Hello depuis Home</p>
+            <DisplaySauces />
         </>
     )
 }
