@@ -20,7 +20,7 @@ const DisplaySauces = () => {
                 Authorization: `Bearer ${authCtx.token}`,
             }
         })
-            .then((res) => { setSauceData(res.data); console.log(res.data) })
+            .then((res) => { setSauceData(res.data) })
             .catch((err) => console.log(err))
     
     }, [authCtx.token]);
@@ -41,14 +41,16 @@ const DisplaySauces = () => {
                     <ul className="sauces_list">
                         <>{sauceData.map((sauce, i) => (
                             <li key={sauce._id}>
-                                <SauceCard 
-                                    imageUrl={sauce.imageUrl}
-                                    heat={sauce.heat}
-                                    name={sauce.name}
-                                    manufacturer={sauce.manufacturer}
-                                    likes={sauce.likes}
-                                    dislikes={sauce.dislikes}
-                                />
+                                <a href={'/sauce/' + sauce._id}>
+                                    <SauceCard 
+                                        imageUrl={sauce.imageUrl}
+                                        heat={sauce.heat}
+                                        name={sauce.name}
+                                        manufacturer={sauce.manufacturer}
+                                        likes={sauce.likes}
+                                        dislikes={sauce.dislikes}
+                                    />
+                                </a>
                             </li>
                         ))}</>
                     </ul>

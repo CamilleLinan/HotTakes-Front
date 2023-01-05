@@ -1,9 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
-import RatingScale from './RatingScale';
-
-const thumbsUp = <FontAwesomeIcon icon={faThumbsUp} />
-const thumbsDown = <FontAwesomeIcon icon={faThumbsDown} />
+import RatingScale from '../Layout/RatingScale';
+import SauceVote from '../Layout/SauceVote';
 
 const SauceCard = (props) => {
     return(
@@ -14,12 +10,7 @@ const SauceCard = (props) => {
                 <h3 className="card_figcaption_title bold">{props.name}</h3>
                 <p className="card_figcaption_subtitle">par {props.manufacturer}</p>
             </figcaption>
-            <div className='card_vote'>
-                <i className='card_vote_icon'>{thumbsUp}</i>
-                <span className='card_vote_number'>{props.likes}</span>
-                <i className='card_vote_icon'>{thumbsDown}</i>
-                <span className='card_vote_number'>{props.dislikes}</span>
-            </div>
+            <SauceVote likes={props.likes} dislikes={props.dislikes} />
         </figure>
     )
 }
