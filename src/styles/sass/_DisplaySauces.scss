@@ -1,5 +1,39 @@
+@media(max-width: 768px) {
+    .sauces_list {
+        & li {
+            width: 39% !important;
+        }
+    }
+
+    .card {
+        &_img {
+            height: 190px !important;
+        }
+        &_figcaption {
+            &_title {
+                font-size: 18px;
+            }
+        }
+        &_vote {
+            font-size: 16px;
+        }
+    }
+
+    .sauce_ratings {
+        font-size: 18px !important;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1200px) {
+    .sauces_list {
+        & li {
+            width: 27% !important;
+        }
+    }
+}
+
 .title_home {
-    margin: 4rem 0;
+    margin: 2.5rem 0;
     font-size: 30px;
     text-shadow: 0 0 10px #ff000074;
 }
@@ -31,7 +65,7 @@
         margin: 1rem 0;
         
         & li {
-            width: 18%;
+            width: 22%;
             margin: 1rem;
         }
     }
@@ -47,9 +81,11 @@
     
     &_img {
         width: 100%;
-        height: 220px;
-        object-fit: cover;
+        height: 300px;
+        object-fit: contain;
         border-radius: 0.3rem 0.3rem 0 0;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+        margin-top: 0.2rem;
     }
 
     &_figcaption {
@@ -58,12 +94,13 @@
         padding: 0.5rem 0.8rem;
         
         &_title {
-            margin-top: 0;
+            margin-top: 0.3rem;
             margin-bottom: 0;
         }
         
         &_subtitle {
             margin-top: 5px;
+            font-size: 15px;
         }
     }
 
@@ -73,6 +110,8 @@
         align-self: center;
         width: 50%;
         color: gray;
+        margin-top: -0.8rem;
+        margin-bottom: 0.5rem;
     }
 }
 

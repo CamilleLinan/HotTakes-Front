@@ -11,7 +11,7 @@ const SauceCard = (props) => {
             <img src={props.imageUrl} alt="" className="card_img" />
             <figcaption className="card_figcaption">
                     <RatingScale heat={props.heat} />
-                <h3 className="card_figcaption_title">{props.name}</h3>
+                <h3 className="card_figcaption_title bold">{props.name}</h3>
                 <p className="card_figcaption_subtitle">par {props.manufacturer}</p>
             </figcaption>
             <div className='card_vote'>
