@@ -58,7 +58,7 @@
         
         &_title {
             margin: 0;
-            text-shadow: 0 0 10px #ff000074;
+            text-shadow: 0 0 5px #ff000074;
         }
     }
 
@@ -116,32 +116,39 @@
         align-items: center;
         justify-content: center;
         align-self: center;
-        color: gray;
         margin-top: -0.8rem;
         margin-bottom: 0.5rem;
         font-family: 'Lato';
-        font-size: 17px;
         
         &_icon {
             margin: 0 0.3rem;
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            color: gray;
+            font-size: 17px;
             
             &_like {
-                color: green;
+                color: rgb(1, 125, 1);
+                text-shadow: 0 0 2px #00ff1a49;
             }
             
             &_dislike {
-                color: $primary-clr;
+                color: rgb(170, 1, 1);
+                text-shadow: 0 0 2px #ff000049;
             }
         }
     }
 }
 
 #notlike:hover {
-    color: green;
+    color: rgb(1, 125, 1);
+    text-shadow: 0 0 2px #00ff1a49;
 }
 
 #notdislike:hover {
-    color: $primary-clr;
+    color: rgb(170, 1, 1);
+    text-shadow: 0 0 2px #ff000049;
 }
 
 .sauce_ratings {

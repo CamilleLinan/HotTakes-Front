@@ -4,8 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFire } from '@fortawesome/free-solid-svg-icons';
 import AuthContext from "../../context/authContext"
 import HeatScale from "../Layout/HeatScale";
-import LikeSauce from "../Layout/LikeSauce";
-import DislikeSauce from "../Layout/DislikeSauce";
+import EvaluateSauce from "../Layout/EvaluateSauce";
 
 const fireIcon = <FontAwesomeIcon icon={faFire} />
 
@@ -53,8 +52,7 @@ const DisplaySauces = () => {
                                         </figcaption>
                                     </a>
                                     <div className='card_vote'>
-                                        <LikeSauce propSauce={sauce} />
-                                        <DislikeSauce propSauce={sauce} />
+                                        <EvaluateSauce propSauce={sauce} />
                                     </div>
                                 </figure>
                             </li>
