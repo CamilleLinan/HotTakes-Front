@@ -3,7 +3,9 @@ import { useContext, useEffect, useCallback, useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFire } from '@fortawesome/free-solid-svg-icons';
 import AuthContext from "../../context/authContext"
-import SauceCard from "./SauceCard"
+import HeatScale from "../Layout/HeatScale";
+import LikeSauce from "../Layout/LikeSauce";
+import DislikeSauce from "../Layout/DislikeSauce";
 
 const fireIcon = <FontAwesomeIcon icon={faFire} />
 
@@ -42,15 +44,19 @@ const DisplaySauces = () => {
                         <>{sauceData.map((sauce, i) => (
                             <li key={sauce._id}>
                                 <a href={'/sauce/' + sauce._id}>
-                                    <SauceCard 
-                                        imageUrl={sauce.imageUrl}
-                                        heat={sauce.heat}
-                                        name={sauce.name}
-                                        manufacturer={sauce.manufacturer}
-                                        likes={sauce.likes}
-                                        dislikes={sauce.dislikes}
-                                    />
+                                    <figure className="card">
+                                        <img src={sauce.imageUrl} alt="" className="card_img" />
+                                        <figcaption className="card_figcaption">
+                                                <HeatScale heat={sauce.heat} />
+                                            <h3 className="card_figcaption_title bold">{sauce.name}</h3>
+                                            <p className="card_figcaption_subtitle">par {sauce.manufacturer}</p>
+                                        </figcaption>
+                                    </figure>
                                 </a>
+                                <div className='card_vote'>
+                                    <LikeSauce propSauce={sauce} />
+                                    <DislikeSauce propSauce={sauce} />
+                                </div>
                             </li>
                         ))}</>
                     </ul>

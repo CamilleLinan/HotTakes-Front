@@ -4,7 +4,7 @@ import { faPepperHot } from '@fortawesome/free-solid-svg-icons';
 const pepper = <FontAwesomeIcon icon={faPepperHot} />
 const pepperGrey = <FontAwesomeIcon icon={faPepperHot} />
 
-const RatingScale = (props) => {
+const HeatScale = (props) => {
     const scaleValue = props.heat
 
     const range = [1, 2, 3, 4, 5]
@@ -20,4 +20,4 @@ const RatingScale = (props) => {
     )
 }
 
-export default RatingScale;
+export default HeatScale;

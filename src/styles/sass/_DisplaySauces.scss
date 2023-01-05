@@ -107,11 +107,20 @@
     &_vote {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         align-self: center;
         width: 50%;
         color: gray;
         margin-top: -0.8rem;
         margin-bottom: 0.5rem;
+        &_icon {
+            &_like {
+                color: green;
+            }
+            &_dislike {
+                color: $primary-clr;
+            }
+        }
     }
 }
 
