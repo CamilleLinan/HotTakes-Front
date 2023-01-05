@@ -43,20 +43,20 @@ const DisplaySauces = () => {
                     <ul className="sauces_list">
                         <>{sauceData.map((sauce, i) => (
                             <li key={sauce._id}>
-                                <a href={'/sauce/' + sauce._id}>
-                                    <figure className="card">
+                                <figure className="card">
+                                    <a href={'/sauce/' + sauce._id}>
                                         <img src={sauce.imageUrl} alt="" className="card_img" />
                                         <figcaption className="card_figcaption">
-                                                <HeatScale heat={sauce.heat} />
+                                            <HeatScale heat={sauce.heat} />
                                             <h3 className="card_figcaption_title bold">{sauce.name}</h3>
                                             <p className="card_figcaption_subtitle">par {sauce.manufacturer}</p>
                                         </figcaption>
-                                    </figure>
-                                </a>
-                                <div className='card_vote'>
-                                    <LikeSauce propSauce={sauce} />
-                                    <DislikeSauce propSauce={sauce} />
-                                </div>
+                                    </a>
+                                    <div className='card_vote'>
+                                        <LikeSauce propSauce={sauce} />
+                                        <DislikeSauce propSauce={sauce} />
+                                    </div>
+                                </figure>
                             </li>
                         ))}</>
                     </ul>

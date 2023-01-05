@@ -71,7 +71,7 @@ const LikeSauce = ({ propSauce }) => {
     return(
         <>
             {!isLiked ?
-                <span onClick={addLike} className='card_vote_icon'>{likeIcon} {likeUpdate}</span>
+                <span onClick={addLike} id='notlike' className='card_vote_icon'>{likeIcon} {likeUpdate}</span>
                 : <span onClick={removeLike} className='card_vote_icon card_vote_icon_like'>{removeLikeIcon} {likeUpdate}</span>
             }
         </>

@@ -71,7 +71,7 @@ const DislikeSauce = ({ propSauce }) => {
     return(
         <>
             {!isDisliked ?
-                <span onClick={addDislike} className='card_vote_icon'>{dislikeIcon} {dislikeUpdate}</span>
+                <span onClick={addDislike} id='notdislike' className='card_vote_icon'>{dislikeIcon} {dislikeUpdate}</span>
                 : <span onClick={removeDislike} className='card_vote_icon card_vote_icon_dislike'>{removeDislikeIcon} {dislikeUpdate}</span>
             }
         </>
