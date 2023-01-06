@@ -10,7 +10,7 @@ const removeLikeIcon = <FontAwesomeIcon icon={faThumbsUp} />
 const dislikeIcon = <FontAwesomeIcon icon={faThumbsDown} />
 const removeDislikeIcon = <FontAwesomeIcon icon={faThumbsDown} />
 
-const LikeSauce = ({ propSauce }) => {
+const EvaluateSauce = ({ propSauce }) => {
     const authCtx = useContext(AuthContext);
     const userId = authCtx.userId;
     const sauceId = propSauce._id;
@@ -135,4 +135,4 @@ const LikeSauce = ({ propSauce }) => {
     )
 }
 
-export default LikeSauce
+export default EvaluateSauce

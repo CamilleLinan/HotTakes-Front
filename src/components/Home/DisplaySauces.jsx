@@ -9,11 +9,11 @@ import EvaluateSauce from "../Layout/EvaluateSauce";
 const fireIcon = <FontAwesomeIcon icon={faFire} />
 
 const DisplaySauces = () => {
-    const [ sauceData, setSauceData ] = useState([])
+    const [ saucesData, setSaucesData ] = useState([])
 
     const authCtx = useContext(AuthContext);
 
-    const getSauceData = useCallback(async () => {
+    const getSaucesData = useCallback(async () => {
         await axios ({
             method: 'GET',
             url: 'http://localhost:5000/api/sauces',
@@ -21,14 +21,14 @@ const DisplaySauces = () => {
                 Authorization: `Bearer ${authCtx.token}`,
             }
         })
-            .then((res) => { setSauceData(res.data) })
+            .then((res) => { setSaucesData(res.data) })
             .catch((err) => console.log(err))
     
     }, [authCtx.token]);
 
     useEffect(() => {
-        getSauceData();
-    }, [getSauceData]);
+        getSaucesData();
+    }, [getSaucesData]);
 
     return(
         <>
@@ -38,9 +38,9 @@ const DisplaySauces = () => {
                     <i className="sauces_section_name_icon">{fireIcon}</i>
                     <h2 className="sauces_section_name_title bold">Toutes les sauces</h2>
                 </div>
-                {sauceData.length > 0 ?
+                {saucesData.length > 0 ?
                     <ul className="sauces_list">
-                        <>{sauceData.map((sauce, i) => (
+                        <>{saucesData.map((sauce, i) => (
                             <li key={sauce._id}>
                                 <figure className="card">
                                     <a href={'/sauce/' + sauce._id}>

@@ -1,0 +1,21 @@
+.sauce_page {
+    &_figure {
+        display: flex;
+        margin: 8rem auto;
+        border: 1px solid $primary-clr;
+        width: 60%;
+        padding: 0;
+        box-shadow: 0 0 10px #ff000074;
+
+        &_img {
+            align-self: baseline;
+            width: 250px;
+            border-right: 1px solid rgba(128, 128, 128, 0.2);
+            padding: 0.5rem 0;
+        }
+    }
+
+    &_figcaption {
+        padding-left: 1rem;
+    }
+}
