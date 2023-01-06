@@ -43,7 +43,7 @@ const DisplaySauces = () => {
                         <>{saucesData.map((sauce, i) => (
                             <li key={sauce._id}>
                                 <figure className="card">
-                                    <a href={'/sauce/' + sauce._id}>
+                                    <a href={'/sauces/' + sauce._id}>
                                         <img src={sauce.imageUrl} alt="" className="card_img" />
                                         <figcaption className="card_figcaption">
                                             <div className='sauce_ratings'>

@@ -44,7 +44,13 @@ const EvaluateSauce = (props) => {
                 setIsLiked(true);
                 setLikeUpdate(likeUpdate+1);
             })
-            .catch((err) => {console.log(err)});
+            .catch((err) => {
+                if (err.response.status === 401) {
+                    window.alert('Vous devez être connecté pour mettre un vote')
+                } else {
+                    window.alert('Désolé, un problème serveur est survenu')
+                }
+            });
     };
 
     // Fonction retirer un like
@@ -64,7 +70,13 @@ const EvaluateSauce = (props) => {
                 setIsLiked(false);
                 setLikeUpdate(likeUpdate-1);
             })
-            .catch((err) => {console.log(err)});
+            .catch((err) => {
+                if (err.response.status === 401) {
+                    window.alert('Vous devez être connecté pour mettre un vote')
+                } else {
+                    window.alert('Désolé, un problème serveur est survenu')
+                }
+            });
     };
 
     // Fonction ajouter un dislike
@@ -84,7 +96,13 @@ const EvaluateSauce = (props) => {
                 setIsDisliked(true);
                 setDislikeUpdate(dislikeUpdate+1);
             })
-            .catch((err) => {console.log(err)});
+            .catch((err) => {
+                if (err.response.status === 401) {
+                    window.alert('Vous devez être connecté pour mettre un vote')
+                } else {
+                    window.alert('Désolé, un problème serveur est survenu')
+                }
+            });
     };
 
     // Fonction retirer un dislike
@@ -104,7 +122,13 @@ const EvaluateSauce = (props) => {
                 setIsDisliked(false);
                 setDislikeUpdate(dislikeUpdate-1);
             })
-            .catch((err) => {console.log(err)});
+            .catch((err) => {
+                if (err.response.status === 401) {
+                    window.alert('Vous devez être connecté pour mettre un vote')
+                } else {
+                    window.alert('Désolé, un problème serveur est survenu')
+                }
+            });
     };
 
     useEffect(() => {
