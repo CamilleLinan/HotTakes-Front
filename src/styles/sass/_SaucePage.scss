@@ -31,4 +31,14 @@
             font-size: 20px !important;
         }
     }
+
+    &_content {
+        &_name {
+            margin-bottom: 0;
+        }
+        &_manufacturer {
+            margin-top: 0.5rem;
+            font-size: 18px;
+        }
+    }
 }

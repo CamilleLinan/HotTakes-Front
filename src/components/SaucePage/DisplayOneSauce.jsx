@@ -34,13 +34,15 @@ const DisplayOneSauce = () => {
                 <figure className="sauce_page_figure">
                     <img src={sauceData.imageUrl} alt="" className="sauce_page_figure_img" />
                     <figcaption className="sauce_page_figcaption">
-                        <h1 className="sauce_page_content_name">{sauceData.name}</h1>
-                        <h2 className="sauce_page_content_manufacturer">Par {sauceData.manufacturer}</h2>
+                        <h1 className="sauce_page_content_name bold">{sauceData.name}</h1>
+                        <h2 className="sauce_page_content_manufacturer">Par <span className="bold">{sauceData.manufacturer}</span></h2>
                         
-                        <p>Force :</p>
-                        <HeatScale heat={sauceData.heat} />
+                        <p className="sauce_page_content_heat bold">Force :</p>
+                        <div className='sauce_page_ratings'>
+                            <HeatScale heat={sauceData.heat} />
+                        </div>
                         
-                        <p className="sauce_page_content_desc">Description : {sauceData.description}</p>
+                        <p className="sauce_page_content_desc bold">Description : {sauceData.description}</p>
                         
                         <div className="sauce_page_vote">
                             <EvaluateSauce 

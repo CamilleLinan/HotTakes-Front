@@ -46,7 +46,9 @@ const DisplaySauces = () => {
                                     <a href={'/sauce/' + sauce._id}>
                                         <img src={sauce.imageUrl} alt="" className="card_img" />
                                         <figcaption className="card_figcaption">
-                                            <HeatScale heat={sauce.heat} />
+                                            <div className='sauce_ratings'>
+                                                <HeatScale heat={sauce.heat} />
+                                            </div>
                                             <h3 className="card_figcaption_title bold">{sauce.name}</h3>
                                             <p className="card_figcaption_subtitle">par {sauce.manufacturer}</p>
                                         </figcaption>
