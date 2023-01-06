@@ -41,7 +41,17 @@
     &_figcaption {
         display: flex;
         flex-direction: column;
-        padding-left: 1rem;
+        width: 100%;
+        padding: 1rem;
+        &_container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &_icons_penicon {
+                font-size: 18px;
+                color: rgb(187, 187, 187);
+            }
+        }
     }
 
     &_vote {
@@ -58,6 +68,7 @@
 
     &_content {
         &_name {
+            margin-top: 0;
             margin-bottom: 0;
         }
         
