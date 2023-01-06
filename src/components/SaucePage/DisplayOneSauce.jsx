@@ -42,7 +42,11 @@ const DisplayOneSauce = () => {
                             <HeatScale heat={sauceData.heat} />
                         </div>
                         
-                        <p className="sauce_page_content_desc bold">Description : {sauceData.description}</p>
+                        <p className="sauce_page_content_desc_title bold">Description :</p>
+                        <p className="sauce_page_content_desc_content">{sauceData.description}</p>
+
+                        <p className="sauce_page_content_desc_title bold">Piment principal :</p>
+                        <p className="sauce_page_content_desc_content">{sauceData.mainPepper}</p>
                         
                         <div className="sauce_page_vote">
                             <EvaluateSauce 

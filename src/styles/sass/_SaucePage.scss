@@ -1,3 +1,24 @@
+@media(max-width: 768px) {
+    .sauce_page {
+        &_figure {
+            flex-direction: column;
+            width: 80% !important;
+            &_img {
+                display: flex;
+                width: 80% !important;
+                align-self: center !important;
+                border-right: transparent !important;
+                border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+            }
+        }
+        &_vote {
+            display: flex;
+            justify-content: center !important;
+            margin-left: -1rem !important;
+        }
+    }
+}
+
 .sauce_page {
     &_figure {
         position: relative;
@@ -5,6 +26,7 @@
         margin: 5rem auto;
         border: 1px solid $primary-clr;
         width: 60%;
+        max-width: 600px;
         padding: 0;
         box-shadow: 0 0 10px #ff000074;
 
@@ -27,6 +49,7 @@
         align-items: flex-end;
         height: 100%;
         margin-bottom: 0.5rem;
+        
         &_icon {
             font-size: 20px !important;
             cursor: pointer;
@@ -37,9 +60,29 @@
         &_name {
             margin-bottom: 0;
         }
+        
         &_manufacturer {
             margin-top: 0.5rem;
             font-size: 18px;
+        }
+        
+        &_heat {
+            margin-bottom: 0.5rem;
+            font-size: 20px;
+        }
+        
+        &_desc {
+            &_title {
+                margin-top: 1.5rem;
+                margin-bottom: 0.5rem;
+                font-size: 20px;
+            }
+        
+            &_content {
+                margin-top: 0;
+                font-size: 18px;
+                color: rgb(171, 169, 169);
+            }
         }
     }
 }
