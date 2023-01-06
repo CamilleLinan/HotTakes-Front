@@ -52,7 +52,13 @@ const DisplaySauces = () => {
                                         </figcaption>
                                     </a>
                                     <div className='card_vote'>
-                                        <EvaluateSauce propSauce={sauce} />
+                                        <EvaluateSauce 
+                                            _id={sauce._id}
+                                            usersLiked={sauce.usersLiked}
+                                            usersDisliked={sauce.usersDisliked}
+                                            likes={sauce.likes}
+                                            dislikes={sauce.dislikes}
+                                        />
                                     </div>
                                 </figure>
                             </li>

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router"
 import AuthContext from "../../context/authContext";
+import EvaluateSauce from "../Layout/EvaluateSauce";
 import HeatScale from "../Layout/HeatScale";
 
 const DisplayOneSauce = () => {
@@ -28,18 +29,32 @@ const DisplayOneSauce = () => {
     }, [getSauceData]);
 
     return(
-        <section className="sauce_page">
-            <figure className="sauce_page_figure">
-                <img src={sauceData.imageUrl} alt="" className="sauce_page_figure_img" />
-                <figcaption className="sauce_page_figcaption">
-                    <h1 className="sauce_page_content_name">{sauceData.name}</h1>
-                    <h2 className="sauce_page_content_manufacturer">Par {sauceData.manufacturer}</h2>
-                    <p>Force :</p>
-                    <HeatScale heat={sauceData.heat} />
-                    <p className="sauce_page_content_desc">Description : {sauceData.description}</p>
-                </figcaption>
-            </figure>
-        </section>
+        <>{sauceData._id === id &&
+            <section className="sauce_page">
+                <figure className="sauce_page_figure">
+                    <img src={sauceData.imageUrl} alt="" className="sauce_page_figure_img" />
+                    <figcaption className="sauce_page_figcaption">
+                        <h1 className="sauce_page_content_name">{sauceData.name}</h1>
+                        <h2 className="sauce_page_content_manufacturer">Par {sauceData.manufacturer}</h2>
+                        
+                        <p>Force :</p>
+                        <HeatScale heat={sauceData.heat} />
+                        
+                        <p className="sauce_page_content_desc">Description : {sauceData.description}</p>
+                        
+                        <div className="sauce_page_vote">
+                            <EvaluateSauce 
+                                _id={sauceData._id}
+                                usersLiked={sauceData.usersLiked}
+                                usersDisliked={sauceData.usersDisliked}
+                                likes={sauceData.likes}
+                                dislikes={sauceData.dislikes}
+                            />
+                        </div>
+                    </figcaption>
+                </figure>
+            </section>
+        } </>
     )
 }
 

@@ -1,7 +1,8 @@
 .sauce_page {
     &_figure {
+        position: relative;
         display: flex;
-        margin: 8rem auto;
+        margin: 5rem auto;
         border: 1px solid $primary-clr;
         width: 60%;
         padding: 0;
@@ -16,6 +17,18 @@
     }
 
     &_figcaption {
+        display: flex;
+        flex-direction: column;
         padding-left: 1rem;
+    }
+
+    &_vote {
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+        margin-bottom: 0.5rem;
+        &_icon {
+            font-size: 20px !important;
+        }
     }
 }
