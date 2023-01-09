@@ -24,16 +24,20 @@ const UpdateSauceModal = (props) => {
                         ref={props.manufacturerInputRef}
                         className="modal_container_input"
                     /> 
+
                     <label htmlFor="heat" className="modal_container_label">Force :</label>
+                    <span><output id='heat_value'></output> / 5</span>
                     <input 
-                        type='cursor'
+                        type='range'
                         name="heat"
                         id="heat"
+                        min='1' max='5'
                         onChange={props.changeHandler}
                         defaultValue={props.heat}
                         ref={props.heatInputRef}
                         className="modal_container_input"
                     />
+            
                     <label htmlFor="description" className="modal_container_label">Description :</label>
                     <input 
                         type='text'

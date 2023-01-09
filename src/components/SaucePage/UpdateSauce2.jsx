@@ -69,6 +69,7 @@ const UpdateSauce2 = ({ propSauceData }) => {
             .then(() => {
                 setPopUpConfirm(false);
                 alert('Modification(s) enregistrée(s) !');
+                window.location.reload()
             })
             .catch((err) => {
                 console.log(err)
