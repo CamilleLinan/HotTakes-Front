@@ -2,6 +2,13 @@ import axios from "axios";
 import { useContext, useEffect, useRef, useState } from "react";
 import AuthContext from "../../context/authContext";
 import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+import HeatScale from "../Layout/HeatScale";
+
+const penIcon = <FontAwesomeIcon icon={faPen} />
 
 const UpdateSauce = ({ propSauceData }) => {
     const authCtx = useContext(AuthContext);
@@ -22,8 +29,8 @@ const UpdateSauce = ({ propSauceData }) => {
     const modifyHandler = () => {
         setModify((modify) => !modify);
     }
-
-    const changeHandler = (e) => {
+    
+    const changeHandler = () => {
         const enteredName = nameInputRef.current.value;
         const enteredManufacturer = manufacturerInputRef.current.value;
         const enteredHeat = heatInputRef.current.value;
@@ -40,15 +47,29 @@ const UpdateSauce = ({ propSauceData }) => {
         })
     }
 
-    const { register, handleSubmit } = useForm({
-        defaultValues: {
+    // Utilisation de YupResolver
+    const formSchema = Yup.object().shape({
+        name: Yup.string().trim()
+            .min(2, 'Doit contenir minimum 2 caractères')
+            .max(30, 'Doit contenir maximum 30 caractères'),
+        manufacturer: Yup.string().trim()
+            .min(2, 'Doit contenir minimum 2 caractères')
+            .max(30, 'Doit contenir maximum 30 caractères'),
+        heat: Yup.number(),
+        description: Yup.string(),
+        mainPepper: Yup.string()
+    });
+
+    const formOptions = { resolver: yupResolver(formSchema) }
+    const { register, handleSubmit } = useForm(formOptions, {
+        defaultValue: {    
             name: '',
             manufacturer: '',
             heat: '',
             description: '',
-            mainPepper: '',
+            mainPepper: ''
         }
-    })
+    });
 
     const onSubmit = async (data) => {
         if (!modify) {
@@ -71,14 +92,16 @@ const UpdateSauce = ({ propSauceData }) => {
 
     return(
         <>
-            <div className="backdrop">
-                <section className="form_container">
-                    <h3>Modifier la sauce</h3>
-                    <form action="" onSubmit={handleSubmit(onSubmit)}>
-                    <label htmlFor="name">Nom :</label>
+            <section className="form_container">
+                {modify && <p>Modifier la sauce</p> }
+                <form action="" onSubmit={handleSubmit(onSubmit)} id='update-sauce-infos'> 
+
+                {!modify &&  <i onClick={modifyHandler} title='Éditer' className='trending_container_post_icons_icon trending_container_post_icons_icon_modify'>{penIcon}</i>}
                     {!modify ? <>
-                        <p>{sauceDataUpdate.name}</p>
+                        <h1 className="sauce_page_content_name bold">{sauceDataUpdate.name}</h1>
                     </> : <>
+                    <label htmlFor="name">Nom :</label>
+                    <br />
                     <input 
                         type='text'
                         name="name"
@@ -86,12 +109,16 @@ const UpdateSauce = ({ propSauceData }) => {
                         onChange={changeHandler}
                         defaultValue={sauceDataUpdate.name}
                         ref={nameInputRef}
+                        className='form_input'
                         {...register('name')}
                     /> 
                     </>}
+
                     {!modify ? <>
-                        <p>{sauceDataUpdate.manufacturer}</p>
+                        <h2 className="sauce_page_content_manufacturer">Par <span className="bold">{sauceDataUpdate.manufacturer}</span></h2>
                     </> : <>
+                    <label htmlFor="manufacturer">Fabriquant :</label>
+                    <br />
                     <input 
                         type='text'
                         name="manufacturer"
@@ -102,22 +129,34 @@ const UpdateSauce = ({ propSauceData }) => {
                         {...register('manufacturer')}
                     /> 
                     </>}
+
+                    
                     {!modify ? <>
-                        <p>{sauceDataUpdate.heat}</p>
+                        <p className="sauce_page_content_heat bold">Force :</p>
+                        <div className='sauce_page_ratings'>
+                            <HeatScale heat={sauceDataUpdate.heat} />
+                        </div>
                     </> : <>
+                    <label htmlFor="heat">Force :</label>
+                    <br />
                     <input 
-                        type='cursor'
+                        type='range'
                         name="heat"
                         id="heat"
+                        min='1' max='5'
                         onChange={changeHandler}
                         defaultValue={sauceDataUpdate.heat}
                         ref={heatInputRef}
                         {...register('heat')}
                     /> 
                     </>}
+                    
                     {!modify ? <>
-                        <p>{sauceDataUpdate.description}</p>
+                        <p className="sauce_page_content_desc_title bold">Description :</p>
+                        <p className="sauce_page_content_desc_content">{sauceDataUpdate.description}</p>
                     </> : <>
+                    <label htmlFor="description" className="sauce_page_content_desc_title bold">Description :</label>
+                    <br />
                     <input 
                         type='text'
                         name="description"
@@ -128,9 +167,13 @@ const UpdateSauce = ({ propSauceData }) => {
                         {...register('description')}
                     /> 
                     </>}
+
                     {!modify ? <>
-                        <p>{sauceDataUpdate.mainPepper}</p>
+                        <p className="sauce_page_content_desc_title bold">Piment principal :</p>
+                        <p className="sauce_page_content_desc_content">{sauceDataUpdate.mainPepper}</p>
                     </> : <>
+                    <label className="sauce_page_content_desc_title bold">Piment principal :</label>
+                    <br />
                     <input 
                         type='text'
                         name="mainPepper"
@@ -141,12 +184,11 @@ const UpdateSauce = ({ propSauceData }) => {
                         {...register('mainPepper')}
                     /> 
                     </>}
-                    {!modify ?
-                    <button onClick={modifyHandler}>Modifier</button>
-                    : <button onClick={modifyHandler}>Enregistrer</button>}
-                    </form>
-                </section>
-            </div>
+                    <br />
+                    {modify &&
+                    <button type='submit' onClick={modifyHandler}>Enregistrer</button>}
+                </form>
+            </section>
         </>
     )
 }

@@ -3,8 +3,7 @@ import { useCallback, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router"
 import AuthContext from "../../context/authContext";
 import EvaluateSauce from "../Layout/EvaluateSauce";
-import HeatScale from "../Layout/HeatScale";
-import UpdateSauce from "./UpdateSauce2";
+import UpdateSauce from "./UpdateSauce";
 
 const DisplayOneSauce = () => {
     const { id } = useParams()
@@ -35,26 +34,7 @@ const DisplayOneSauce = () => {
                 <figure className="sauce_page_figure">
                     <img src={sauceData.imageUrl} alt="" className="sauce_page_figure_img" />
                     <figcaption className="sauce_page_figcaption">
-                        <div className="sauce_page_figcaption_container">
-                            <h1 className="sauce_page_content_name bold">{sauceData.name}</h1>
-                                <div className="sauce_page_figcaption_container_icons">
-                                    <UpdateSauce propSauceData={sauceData} title='Éditer' />
-
-                                </div>
-                            
-                        </div>
-                        <h2 className="sauce_page_content_manufacturer">Par <span className="bold">{sauceData.manufacturer}</span></h2>
-                        
-                        <p className="sauce_page_content_heat bold">Force :</p>
-                        <div className='sauce_page_ratings'>
-                            <HeatScale heat={sauceData.heat} />
-                        </div>
-                        
-                        <p className="sauce_page_content_desc_title bold">Description :</p>
-                        <p className="sauce_page_content_desc_content">{sauceData.description}</p>
-
-                        <p className="sauce_page_content_desc_title bold">Piment principal :</p>
-                        <p className="sauce_page_content_desc_content">{sauceData.mainPepper}</p>
+                        <UpdateSauce propSauceData={sauceData} title='Éditer' />
                         
                         <div className="sauce_page_vote">
                             <EvaluateSauce 
