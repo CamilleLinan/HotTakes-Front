@@ -22,14 +22,5 @@
         border: 1px solid $primary-clr;
         border-radius: 0.6rem;
         box-shadow: 0 0 16px #0000002e;
-        
-        &_form {
-            display: flex;
-            flex-direction: column;
-        }
-        &_input {
-            height: 20px;
-            margin: 0.2rem 1rem;
-        }
     }
 }

@@ -85,6 +85,7 @@
     margin: 0;
     border-radius: 0.3rem;
     box-shadow: 0 0 10px #ff000074;
+    background-color: $bg-section-clr;
     
     &_img {
         width: 100%;
@@ -125,17 +126,17 @@
             padding: 0;
             background-color: transparent;
             border: none;
-            color: gray;
+            color: $tertiary-clr;
             font-size: 20px;
             cursor: pointer;
             
             &_like {
-                color: rgb(1, 125, 1);
+                color: $like-clr;
                 text-shadow: 0 0 2px #00ff1a49;
             }
             
             &_dislike {
-                color: rgb(170, 1, 1);
+                color: $dislike-clr;
                 text-shadow: 0 0 2px #ff000049;
             }
         }
@@ -143,12 +144,12 @@
 }
 
 #notlike:hover {
-    color: rgb(1, 125, 1);
+    color: $like-clr;
     text-shadow: 0 0 2px #00ff1a49;
 }
 
 #notdislike:hover {
-    color: rgb(170, 1, 1);
+    color: $dislike-clr;
     text-shadow: 0 0 2px #ff000049;
 }
 
@@ -159,8 +160,7 @@
    
     &_pepper {
         &_grey {
-            color: grey;
-            opacity: 0.7;
+            color: $tertiary-clr;
         }
     }
 }

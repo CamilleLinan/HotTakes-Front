@@ -20,19 +20,37 @@
 }
 
 .sauce_page {
+    &_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &_title {
+            margin: 0;
+        }
+        &_icon {
+            margin-top: 0;
+            cursor: pointer;
+            color: gray;
+            &:hover {
+                color: $primary-clr;
+            }
+        }
+    }
+
     &_figure {
         position: relative;
         display: flex;
         margin: 5rem auto;
         border: 1px solid $primary-clr;
-        width: 60%;
-        max-width: 600px;
+        width: 80%;
+        max-width: 800px;
         padding: 0;
         box-shadow: 0 0 10px #ff000074;
 
         &_img {
-            align-self: baseline;
-            width: 250px;
+            display: flex;
+            align-self: center;
+            width: 280px;
             border-right: 1px solid rgba(128, 128, 128, 0.2);
             padding: 0.5rem 0;
         }
@@ -43,22 +61,12 @@
         flex-direction: column;
         width: 100%;
         padding: 1rem;
-        &_container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            &_icons_penicon {
-                font-size: 18px;
-                color: rgb(187, 187, 187);
-            }
-        }
     }
 
     &_vote {
         display: flex;
         align-items: flex-end;
         height: 100%;
-        margin-bottom: 0.5rem;
         
         &_icon {
             font-size: 20px !important;
@@ -75,6 +83,9 @@
         &_manufacturer {
             margin-top: 0.5rem;
             font-size: 18px;
+            & span {
+                color: $tertiary-clr;
+            }
         }
         
         &_heat {
@@ -92,7 +103,7 @@
             &_content {
                 margin-top: 0;
                 font-size: 18px;
-                color: rgb(171, 169, 169);
+                color: $tertiary-clr;
             }
         }
     }
