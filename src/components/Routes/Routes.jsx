@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AuthContext from '../../context/authContext';
+import AddSauce from "../../pages/AddSauce";
 import Home from "../../pages/Home";
 import Login from "../../pages/Login";
 import SaucePage from "../../pages/SaucePage";
@@ -18,7 +19,8 @@ const IndexRoutes = () => {
                 <Route path="/home" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/sauces/:id" element={<SaucePage />} />
-                {!isLoggedIn && <Route path="/" element={<Home />} />}
+                {isLoggedIn && <Route path="/addSauce" element={<AddSauce />} />}
+                {!isLoggedIn && <Route path="/addSauce" element={<Home />} />}
                 <Route path="*" element={<Home />} />
             </Routes>
         </BrowserRouter>

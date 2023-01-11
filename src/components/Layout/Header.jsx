@@ -21,6 +21,7 @@ const Header = () => {
                     <NavLink 
                         className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_1 header_nav_link_active" : "header_nav_link header_nav_link_1 header_nav_link_inactive")}
                         title='Ajouter une sauce'
+                        end to='/addSauce'
                     >
                         Ajouter une sauce
                     </NavLink>
