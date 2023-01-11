@@ -1,4 +1,4 @@
-import Banner from "../components/Home/Banner"
+import Banner from "../components/Layout/Banner"
 import DisplaySauces from "../components/Home/DisplaySauces"
 import Header from "../components/Layout/Header"
 

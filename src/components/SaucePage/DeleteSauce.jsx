@@ -20,9 +20,10 @@ const DeleteSauce = ({ propSauceId }) => {
         setPopUpConfirm(true)
     }
 
-    // Utilisation du context et dotenv
+    // Utilisation du context
     const authCtx = useContext(AuthContext);
     const navigate = useNavigate()
+    
     const confirmDelete = async (e) => {
         e.preventDefault();
 
