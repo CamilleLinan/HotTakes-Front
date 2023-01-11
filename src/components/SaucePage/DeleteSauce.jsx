@@ -34,7 +34,7 @@ const DeleteSauce = ({ propSauceId }) => {
             },
         })
             .then(() => {
-                alert('La sauce a bien été supprimé !');
+                alert('La sauce a bien été supprimée !');
                 navigate('/');
             })
             .catch((err) => {
