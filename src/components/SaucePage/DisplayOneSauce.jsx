@@ -2,7 +2,6 @@ import axios from "axios";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router"
 import AuthContext from "../../context/authContext";
-import EvaluateSauce from "../Layout/EvaluateSauce";
 import UpdateSauce from "./UpdateSauce";
 
 const DisplayOneSauce = () => {
@@ -31,22 +30,9 @@ const DisplayOneSauce = () => {
     return(
         <>{sauceData._id === id &&
             <section className="sauce_page">
-                <figure className="sauce_page_figure">
-                    <img src={sauceData.imageUrl} alt="" className="sauce_page_figure_img" />
-                    <figcaption className="sauce_page_figcaption">
-                        <UpdateSauce propSauceData={sauceData} title='Éditer' />
-                        
-                        <div className="sauce_page_vote">
-                            <EvaluateSauce 
-                                _id={sauceData._id}
-                                usersLiked={sauceData.usersLiked}
-                                usersDisliked={sauceData.usersDisliked}
-                                likes={sauceData.likes}
-                                dislikes={sauceData.dislikes}
-                            />
-                        </div>
-                    </figcaption>
-                </figure>
+                <div className="sauce_page_figure">
+                    <UpdateSauce propSauceData={sauceData} title='Éditer' />
+                </div>
             </section>
         } </>
     )
