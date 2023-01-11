@@ -10,22 +10,22 @@ const removeLikeIcon = <FontAwesomeIcon icon={faThumbsUp} />
 const dislikeIcon = <FontAwesomeIcon icon={faThumbsDown} />
 const removeDislikeIcon = <FontAwesomeIcon icon={faThumbsDown} />
 
-const LikeSauce = ({ propSauce }) => {
+const EvaluateSauce = (props) => {
     const authCtx = useContext(AuthContext);
     const userId = authCtx.userId;
-    const sauceId = propSauce._id;
-    const usersLiked = propSauce.usersLiked;
-    const usersDisliked = propSauce.usersDisliked;
+    const sauceId = props._id;
+    const usersLiked = props.usersLiked;
+    const usersDisliked = props.usersDisliked;
     
-    const [ likeUpdate, setLikeUpdate ] = useState(propSauce.likes)
+    const [ likeUpdate, setLikeUpdate ] = useState(props.likes)
     const [ isLiked, setIsLiked ] = useState(false);
-    const [ dislikeUpdate, setDislikeUpdate ] = useState(propSauce.dislikes)
+    const [ dislikeUpdate, setDislikeUpdate ] = useState(props.dislikes)
     const [ isDisliked, setIsDisliked ] = useState(false);
 
     useEffect(() => {
-        setLikeUpdate(propSauce.likes);
-        setDislikeUpdate(propSauce.dislikes);
-    }, [propSauce.likes, propSauce.dislikes])
+        setLikeUpdate(props.likes);
+        setDislikeUpdate(props.dislikes);
+    }, [props.likes, props.dislikes])
 
     // Fonction ajouter un like
     const addLike = async () => {
@@ -44,7 +44,13 @@ const LikeSauce = ({ propSauce }) => {
                 setIsLiked(true);
                 setLikeUpdate(likeUpdate+1);
             })
-            .catch((err) => {console.log(err)});
+            .catch((err) => {
+                if (err.response.status === 401) {
+                    window.alert('Vous devez être connecté pour mettre un vote')
+                } else {
+                    window.alert('Désolé, un problème serveur est survenu')
+                }
+            });
     };
 
     // Fonction retirer un like
@@ -64,7 +70,13 @@ const LikeSauce = ({ propSauce }) => {
                 setIsLiked(false);
                 setLikeUpdate(likeUpdate-1);
             })
-            .catch((err) => {console.log(err)});
+            .catch((err) => {
+                if (err.response.status === 401) {
+                    window.alert('Vous devez être connecté pour mettre un vote')
+                } else {
+                    window.alert('Désolé, un problème serveur est survenu')
+                }
+            });
     };
 
     // Fonction ajouter un dislike
@@ -84,7 +96,13 @@ const LikeSauce = ({ propSauce }) => {
                 setIsDisliked(true);
                 setDislikeUpdate(dislikeUpdate+1);
             })
-            .catch((err) => {console.log(err)});
+            .catch((err) => {
+                if (err.response.status === 401) {
+                    window.alert('Vous devez être connecté pour mettre un vote')
+                } else {
+                    window.alert('Désolé, un problème serveur est survenu')
+                }
+            });
     };
 
     // Fonction retirer un dislike
@@ -104,7 +122,13 @@ const LikeSauce = ({ propSauce }) => {
                 setIsDisliked(false);
                 setDislikeUpdate(dislikeUpdate-1);
             })
-            .catch((err) => {console.log(err)});
+            .catch((err) => {
+                if (err.response.status === 401) {
+                    window.alert('Vous devez être connecté pour mettre un vote')
+                } else {
+                    window.alert('Désolé, un problème serveur est survenu')
+                }
+            });
     };
 
     useEffect(() => {
@@ -135,4 +159,4 @@ const LikeSauce = ({ propSauce }) => {
     )
 }
 
-export default LikeSauce
+export default EvaluateSauce

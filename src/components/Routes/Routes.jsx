@@ -17,7 +17,7 @@ const IndexRoutes = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/sauce/:id" element={<SaucePage />} />
+                <Route path="/sauces/:id" element={<SaucePage />} />
                 {!isLoggedIn && <Route path="/" element={<Home />} />}
                 <Route path="*" element={<Home />} />
             </Routes>

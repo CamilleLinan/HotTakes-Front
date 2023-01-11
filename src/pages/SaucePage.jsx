@@ -1,11 +1,13 @@
 import Header from "../components/Layout/Header"
-import SaucePageContent from "../components/SaucePage/SaucePageContent"
+import Banner from "../components/Home/Banner"
+import DisplayOneSauce from "../components/SaucePage/DisplayOneSauce"
 
 const SaucePage = () => {
     return(
         <>
             <Header />
-            <SaucePageContent />
+            <Banner />
+            <DisplayOneSauce />
         </>
     )
 }

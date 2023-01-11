@@ -1,0 +1,120 @@
+@media(max-width: 768px) {
+    .sauce_page {
+        &_figure {
+            flex-direction: column;
+            width: 60% !important;
+            &_img {
+                display: flex;
+                align-self: center !important;
+                border-right: transparent !important;
+            }
+        }
+
+        &_figcaption {
+            border-top: 1px solid rgba(128, 128, 128, 0.2);
+        }
+
+        &_vote {
+            display: flex;
+            justify-content: center !important;
+            margin-left: -1rem !important;
+        }
+    }
+}
+
+.sauce_page {
+    &_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &_title {
+            margin: 0;
+            font-size: 27px;
+            text-shadow: 0 0 5px #ff000074;
+            text-transform: uppercase;
+        }
+        &_icon {
+            margin-top: 0;
+            cursor: pointer;
+            color: $tertiary-clr;
+            &:hover {
+                color: $secondary-clr;
+                text-shadow: 0 0 10px #ff000074;
+            }
+        }
+    }
+
+    &_figure {
+        position: relative;
+        display: flex;
+        margin: 5rem auto;
+        border: 1px solid $primary-clr;
+        width: 80%;
+        max-width: 800px;
+        padding: 0;
+        box-shadow: 0 0 10px #ff000074;
+        background-color: $bg-section-clr;
+
+        &_img {
+            display: flex;
+            align-self: center;
+            width: 280px;
+            padding: 0.5rem 0;
+        }
+    }
+
+    &_figcaption {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+        border-left: 1px solid rgba(128, 128, 128, 0.2);
+    }
+
+    &_vote {
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+        
+        &_icon {
+            font-size: 20px !important;
+            cursor: pointer;
+        }
+    }
+
+    &_content {
+        &_name {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        &_manufacturer {
+            margin-top: 0.2rem;
+            font-size: 17px;
+            color: $tertiary-clr;
+        }
+        
+        &_heat {
+            margin-bottom: 0.5rem;
+            font-size: 20px;
+        }
+        
+        &_desc {
+            &_title {
+                margin-top: 1.5rem;
+                margin-bottom: 0.5rem;
+                font-size: 20px;
+                &_desc {
+                    margin-top: 0;
+                }
+            }
+        
+            &_content {
+                margin-top: 0;
+                font-size: 17px;
+                color: $tertiary-clr;
+            }
+        }
+    }
+}

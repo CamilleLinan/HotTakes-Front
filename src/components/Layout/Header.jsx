@@ -38,14 +38,14 @@ const Header = () => {
                         className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_2 header_nav_link_active" : "header_nav_link header_nav_link_2 header_nav_link_inactive")}
                         title='Se déconnecter'
                         onClick={authCtx.logout}
-                        end to='Login'
+                        end to='/'
                     >
                         Se déconnecter
                     </NavLink> :
                     <NavLink 
                     className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_2 header_nav_link_active" : "header_nav_link header_nav_link_2 header_nav_link_inactive")}
                     title='Se connecter'
-                    end to='Login'
+                    end to='/Login'
                 >
                     Se connecter
                 </NavLink> }

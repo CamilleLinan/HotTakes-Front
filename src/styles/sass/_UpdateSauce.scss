@@ -1,0 +1,61 @@
+.update_sauce_form {
+    &_label {
+        font-size: 20px;
+        &_heat {
+            font-family: 'Lato';
+            font-size: 18px;
+        }
+    }
+
+    &_input {
+        border-color: $secondary-clr;
+        &:focus {
+            outline: 1px solid $secondary-clr;
+        }
+        
+        &_desc {
+            color: white;
+            font-family: 'Raleway';
+            height: auto;
+        }
+    }
+
+    &_buttons_container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &_button {
+        margin: 0.3rem 1rem 1.2rem 1rem;
+        height: 1.6rem;
+        width: 30%;
+        border-radius: 0.2rem;
+        font-size: 15px;
+        
+        &_cancel {
+            background-color: $bg-section-clr;
+            border: 1px solid $primary-clr;
+            color: white;
+            filter: brightness(1.2);
+            &:hover {
+                background-color: $primary-clr;
+                color: black;
+                filter: none;
+            }
+        }
+        
+        &_confirm {
+            font-family: 'Raleway-Medium';
+            font-weight: bold;
+            background-color: $primary-clr;
+            border: 1px solid $primary-clr;
+            &:hover {
+                background-color: $bg-section-clr;
+                border: 1px solid $primary-clr;
+                color: white;
+            }
+        }
+    }
+}
+
