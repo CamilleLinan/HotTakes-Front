@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import HeatScale from "../Layout/HeatScale";
 import EvaluateSauce from "../Layout/EvaluateSauce";
+import DeleteSauce from "./DeleteSauce";
 
 const penIcon = <FontAwesomeIcon icon={faPen} />
 
@@ -100,13 +101,17 @@ const UpdateSauce = ({ propSauceData }) => {
                 />
             </>}
         </div> 
+        
         <div className="sauce_page_figcaption">
             <section className="form_container">
                 <header className="sauce_page_header">
                     {!modify ? 
                     <> <h1 className="sauce_page_header_title bold">{sauceDataUpdate.name}</h1>
                         {sauceDataUpdate.userId === authCtx.userId &&
-                            <i onClick={modifyHandler} title='Éditer' className='sauce_page_header_icon sauce_page_header_icon_modify'>{penIcon}</i>
+                            <div> 
+                                <i onClick={modifyHandler} title='Éditer' className='sauce_page_header_icon sauce_page_header_icon_modify'>{penIcon}</i>
+                                <DeleteSauce propSauceId={propSauceData._id} /> 
+                            </div>
                         } </>
                         : <h1 className="sauce_page_header_title bold">Modifier la sauce</h1> }
                 </header> 
@@ -205,6 +210,7 @@ const UpdateSauce = ({ propSauceData }) => {
                     }
                 </form>
             </section> 
+            
             <div className="sauce_page_vote">
                 <EvaluateSauce 
                     _id={sauceDataUpdate._id}
@@ -214,6 +220,7 @@ const UpdateSauce = ({ propSauceData }) => {
                     dislikes={sauceDataUpdate.dislikes}
                 />
             </div>
+
         </div> </>
     )
 }
