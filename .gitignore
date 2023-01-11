@@ -10,8 +10,6 @@
 
 # production
 /build
-/src/components/SaucePage/UpdateSauce2.jsx
-/src/components/SaucePage/UpdateSauceModal.jsx
 
 # misc
 .DS_Store
