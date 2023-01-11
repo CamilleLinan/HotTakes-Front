@@ -5,6 +5,8 @@
 @import 'Banner';
 @import 'DisplaySauces';
 @import 'SaucePage';
+@import 'UpdateSauce';
+@import'InputRange';
 @import 'UpdateSauceModal';
 
 html {
@@ -26,6 +28,15 @@ li {
 
 button {
     cursor: pointer;
+}
+
+input {
+    font-family: 'Raleway';
+    color: white;
+}
+
+textarea {
+    resize: none;
 }
 
 .bold {

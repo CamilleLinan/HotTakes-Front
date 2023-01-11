@@ -64,6 +64,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    background-color: $bg-section-clr;
     
     &_logo {
         width: 380px ;
@@ -84,7 +85,7 @@
         width: 100%;
             
         &_link {
-            text-shadow: 0 0 10px #ff000074;
+            text-shadow: 0 0 5px #ff000074;
             &:hover {
                 text-decoration: underline;
             }

@@ -73,7 +73,7 @@ const UpdateSauce = ({ propSauceData }) => {
     return(
         <> <section className="form_container">
             {modify && <h1 className="sauce_page_header_title bold">Modifier la sauce</h1>}
-            <form action="" id='update-sauce-infos'> 
+            <form action="" id='update-sauce-infos' className="update_sauce_form"> 
 
             {!modify ?
                 <header className="sauce_page_header">
@@ -83,33 +83,33 @@ const UpdateSauce = ({ propSauceData }) => {
                     }
                 </header>    
             : <>
-                <label htmlFor="name" className="sauce_page_content_desc_title bold">Nom :</label>
-                <br />
-                <input 
-                    type='text'
-                    name="name"
-                    id="name"
-                    onChange={changeHandler}
-                    defaultValue={sauceDataUpdate.name}
-                    ref={nameInputRef}
-                    className='form_input'
-                /> 
+                <label htmlFor="name" className="update_sauce_form_label bold">Nom :</label>
+                    <br />
+                    <input 
+                        type='text'
+                        name="name"
+                        id="name"
+                        onChange={changeHandler}
+                        defaultValue={sauceDataUpdate.name}
+                        ref={nameInputRef}
+                        className='form_input update_sauce_form_input'
+                    /> 
                 </>}
 
                 {!modify ? <>
                     <h2 className="sauce_page_content_manufacturer">By <span className="bold">{sauceDataUpdate.manufacturer}</span></h2>
                 </> : <>
-                <label htmlFor="manufacturer" className="sauce_page_content_desc_title bold">Fabriquant :</label>
-                <br />
-                <input 
-                    type='text'
-                    name="manufacturer"
-                    id="manufacturer"
-                    onChange={changeHandler}
-                    defaultValue={sauceDataUpdate.manufacturer}
-                    ref={manufacturerInputRef}
-                    className='form_input'
-                /> 
+                <label htmlFor="manufacturer" className="update_sauce_form_label bold">Fabriquant :</label>
+                    <br />
+                    <input 
+                        type='text'
+                        name="manufacturer"
+                        id="manufacturer"
+                        onChange={changeHandler}
+                        defaultValue={sauceDataUpdate.manufacturer}
+                        ref={manufacturerInputRef}
+                        className='form_input update_sauce_form_input'
+                    /> 
                 </>}
 
                 
@@ -119,58 +119,58 @@ const UpdateSauce = ({ propSauceData }) => {
                         <HeatScale heat={sauceDataUpdate.heat} />
                     </div>
                 </> : <>
-                <label htmlFor="heat" className="sauce_page_content_desc_title bold">Force :</label>
-                <br />
-                <input 
-                    type='range'
-                    name="heat"
-                    id="heat"
-                    min='1' max='5'
-                    onChange={changeHandler}
-                    defaultValue={sauceDataUpdate.heat}
-                    ref={heatInputRef}
-                    className='form_input'
-                /> 
+                <label htmlFor="heat" className="update_sauce_form_label bold">Force : <span className="update_sauce_form_label_heat">{sauceDataUpdate.heat} / 5</span></label>
+                    <br />
+                    <input 
+                        type='range'
+                        name="heat"
+                        id="heat"
+                        min='1' max='5'
+                        onChange={changeHandler}
+                        defaultValue={sauceDataUpdate.heat}
+                        ref={heatInputRef}
+                        className='update_sauce_form_input_range custom_slider'
+                    />
                 </>}
-                
+                <br />
                 {!modify ? <>
-                    <p className="sauce_page_content_desc_title bold">Description :</p>
+                    <p className="sauce_page_content_desc_title bold sauce_page_content_desc_title_desc">Description :</p>
                     <p className="sauce_page_content_desc_content">{sauceDataUpdate.description}</p>
                 </> : <>
-                <label htmlFor="description" className="sauce_page_content_desc_title bold">Description :</label>
-                <br />
-                <input 
-                    type='text'
-                    name="description"
-                    id="description"
-                    onChange={changeHandler}
-                    defaultValue={sauceDataUpdate.description}
-                    ref={descriptionInputRef}
-                    className='form_input'
-                /> 
+                <label htmlFor="description" className="update_sauce_form_label bold">Description :</label>
+                    <br />
+                    <textarea 
+                        name="description"
+                        id="description"
+                        rows='4' cols='100'
+                        onChange={changeHandler}
+                        defaultValue={sauceDataUpdate.description}
+                        ref={descriptionInputRef}
+                        className='form_input update_sauce_form_input update_sauce_form_input_desc'
+                    /> 
                 </>}
 
                 {!modify ? <>
                     <p className="sauce_page_content_desc_title bold">Piment principal :</p>
                     <p className="sauce_page_content_desc_content">{sauceDataUpdate.mainPepper}</p>
                 </> : <>
-                <label className="sauce_page_content_desc_title bold">Piment principal :</label>
+                <label className="update_sauce_form_label bold">Piment principal :</label>
                 <br />
-                <input 
-                    type='text'
-                    name="mainPepper"
-                    id="mainPepper"
-                    onChange={changeHandler}
-                    defaultValue={sauceDataUpdate.mainPepper}
-                    ref={mainPepperInputRef}
-                    className='form_input'
-                /> 
+                    <input 
+                        type='text'
+                        name="mainPepper"
+                        id="mainPepper"
+                        onChange={changeHandler}
+                        defaultValue={sauceDataUpdate.mainPepper}
+                        ref={mainPepperInputRef}
+                        className='form_input update_sauce_form_input'
+                    /> 
                 </>}
                 <br />
                 {modify && 
-                    <div>
-                        <button onClick={modifyHandler}>Annuler</button>
-                        <button type='submit' onClick={confirmUpdate}>Enregistrer</button>
+                    <div className="update_sauce_form_buttons_container">
+                        <button onClick={modifyHandler} className='update_sauce_form_button update_sauce_form_button_cancel'>Annuler</button>
+                        <button type='submit' onClick={confirmUpdate} className='update_sauce_form_button update_sauce_form_button_confirm'>Enregistrer</button>
                     </div>
                 }
             </form>

@@ -97,11 +97,10 @@
         background-color: rgba(69, 68, 68, 0.386);
         border: 1px solid $primary-clr;
         margin: 0.5rem auto 1rem auto;
-        color: $primary-clr;
         font-size: 16px;
         border-radius: 0.2rem;
         &:focus {
-            outline-color: $primary-clr;
+            outline: 1px solid $primary-clr;
         }
     }
 
