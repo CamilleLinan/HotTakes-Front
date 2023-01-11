@@ -49,9 +49,16 @@ input[type="file"] {
             margin-top: 0;
             cursor: pointer;
             color: $tertiary-clr;
+            font-size: 16px;
+            opacity: 0.6;
             &:hover {
+                opacity: 1;
                 color: $secondary-clr;
                 text-shadow: 0 0 10px #ff000074;
+            }
+            
+            &_delete {
+                margin-left: 1rem;
             }
         }
     }
