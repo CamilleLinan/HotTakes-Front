@@ -70,7 +70,7 @@ const SignUpForm = () => {
     <>
         {formSubmit ? (
             <>
-                <h4 className="success text_center bold">Inscription réussie ! Veuillez vous connecter.</h4>
+                <h4 className="success center bold">Inscription réussie ! Veuillez vous connecter.</h4>
             </>
         ) : (
             <>

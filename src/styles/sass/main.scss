@@ -8,6 +8,7 @@
 @import 'UpdateSauce';
 @import 'InputRange';
 @import 'ConfirmModal';
+@import 'ErrorAuth';
 
 html {
     background-color: $bg-clr;
@@ -45,4 +46,12 @@ textarea {
 
 .center {
     text-align: center;
+}
+
+.error {
+    margin-top: 0;
+}
+
+.success {
+    color: $like-clr;
 }

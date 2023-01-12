@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AuthContext from '../../context/authContext';
-import AddSauce from "../../pages/AddSauce";
 import Home from "../../pages/Home";
 import Login from "../../pages/Login";
 import SaucePage from "../../pages/SaucePage";
-
+import AddSauce from "../../pages/AddSauce";
+import ErrorAuth from "../../pages/ErrorAuth";
 
 // Routes de l'application
 const IndexRoutes = () => {
@@ -20,7 +20,7 @@ const IndexRoutes = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/sauces/:id" element={<SaucePage />} />
                 {isLoggedIn && <Route path="/addSauce" element={<AddSauce />} />}
-                {!isLoggedIn && <Route path="/addSauce" element={<Home />} />}
+                {!isLoggedIn && <Route path="/addSauce" element={<ErrorAuth />} />}
                 <Route path="*" element={<Home />} />
             </Routes>
         </BrowserRouter>

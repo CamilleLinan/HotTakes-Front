@@ -11,6 +11,7 @@ const trashIcon = <FontAwesomeIcon icon={faTrash} />
 const DeleteSauce = ({ propSauceId }) => {
         
     const [ popUpConfirm, setPopUpConfirm ] = useState(false);
+    const [ errorServer, setErrorServer ] = useState('');
     
     const cancelConfirm = () => {
         setPopUpConfirm(false)
@@ -38,8 +39,8 @@ const DeleteSauce = ({ propSauceId }) => {
                 alert('La sauce a bien été supprimée !');
                 navigate('/');
             })
-            .catch((err) => {
-                console.log(err)
+            .catch(() => {
+                setErrorServer({ ...errorServer, message: 'Une erreur interne est survenue. Merci de revenir plus tard.' }) 
             })
     };
 
@@ -48,6 +49,8 @@ const DeleteSauce = ({ propSauceId }) => {
         {popUpConfirm && <ConfirmModal
             title='Confirmer la suppression'
             message='Êtes-vous sûr de vouloir supprimer cette sauce ?'
+            error={errorServer}
+            errorMessage={errorServer.message}
             onCancel={cancelConfirm}
             onConfirm={confirmDelete}
         />}

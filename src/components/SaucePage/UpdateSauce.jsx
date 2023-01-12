@@ -17,6 +17,8 @@ const UpdateSauce = ({ propSauceData }) => {
     const [ dataPicture, setDataPicture ] = useState(propSauceData.imageUrl)
     const [ newDataPicture, setNewDataPicture ] = useState('')
 
+    const [ errorServer, setErrorServer ] = useState('');
+
     const nameInputRef = useRef();
     const manufacturerInputRef = useRef();
     const heatInputRef = useRef();
@@ -81,9 +83,9 @@ const UpdateSauce = ({ propSauceData }) => {
                 modifyHandler();
                 alert('Modification(s) enregistrée(s) !');
             })
-            .catch((err) => {
-                console.log(err)
-            })
+            .catch(() => {
+                setErrorServer({ ...errorServer, message: 'Une erreur interne est survenue. Merci de revenir plus tard.' })      
+            });
     };
 
     return(
@@ -202,11 +204,12 @@ const UpdateSauce = ({ propSauceData }) => {
                         /> 
                     </>}
                     <br />
-                    {modify && 
+                    {modify && <>
                         <div className="update_sauce_form_buttons_container">
                             <button onClick={modifyHandler} className='update_sauce_form_button update_sauce_form_button_cancel'>Annuler</button>
                             <button type='submit' onClick={confirmUpdate} className='update_sauce_form_button update_sauce_form_button_confirm'>Enregistrer</button>
                         </div>
+                        {errorServer && <p className="error center bold">{errorServer.message}</p>}</>
                     }
                 </form>
             </section> 
