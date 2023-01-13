@@ -42,17 +42,17 @@ const DisplaySauces = () => {
                     <h2 className="sauces_section_name_title bold">Toutes les sauces</h2>
                 </div>
                 
-                {errorServer && <><br /><p className="error text_center bold">{errorServer.message}</p></>}
+                {errorServer && <><br /><p className="error center bold">{errorServer.message}</p></>}
 
                 {saucesData.length > 0 ?
                     <ul className="sauces_list">
                         <>{saucesData.map((sauce, i) => (
                             <li key={sauce._id}>
-                                <figure className="card">
+                                <figure className="bg_section card">
                                     <a href={'/sauces/' + sauce._id}>
                                         <img src={sauce.imageUrl} alt="" className="card_img" />
                                         <figcaption className="card_figcaption">
-                                            <div className='sauce_ratings'>
+                                            <div className='sauce_ratings sauce_ratings_displaySauce'>
                                                 <HeatScale heat={sauce.heat} />
                                             </div>
                                             <h3 className="card_figcaption_title bold">{sauce.name}</h3>

@@ -54,7 +54,7 @@ const DeleteSauce = ({ propSauceId }) => {
             onCancel={cancelConfirm}
             onConfirm={confirmDelete}
         />}
-            <i onClick={deleteHandler} title='Supprimer' className='sauce_page_header_icon sauce_page_header_icon_delete'>{trashIcon}</i>
+            <i onClick={deleteHandler} title='Supprimer' className='sauce_page_infos_header_icon sauce_page_infos_header_icon_delete'>{trashIcon}</i>
         </>
     )
 }

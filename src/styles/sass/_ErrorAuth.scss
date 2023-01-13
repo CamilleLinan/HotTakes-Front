@@ -3,10 +3,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    margin-top: 8rem !important;
+    padding: 1rem 1rem 1.3rem 1rem;
     width: 56%;
     min-width: 260px;
     max-width: 430px;
+    margin: 5rem auto;
 
     &_title {
         text-align: center;
@@ -24,5 +25,9 @@
         margin-top: 20px;
         width: 200px;
         height: 2.5rem;
+        background-color: $primary-clr;
+        border: 1px solid $primary-clr;
+        border-radius: 0.2rem;
+        font-size: 16px;
     }
 }

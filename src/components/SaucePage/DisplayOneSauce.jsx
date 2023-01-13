@@ -32,14 +32,12 @@ const DisplayOneSauce = () => {
     return(
         <>
             {sauceData._id === id &&
-                <section className="sauce_page">
-                    <div className="sauce_page_figure">
-                        <UpdateSauce propSauceData={sauceData} title='Éditer' />
-                    </div>
+                <section className="bg_section sauce_page">
+                    <UpdateSauce propSauceData={sauceData} title='Éditer' />
                 </section>
             }
 
-            {errorServer && <><br /><p className="error text_center bold">{errorServer.message}</p></>}
+            {errorServer && <><br /><p className="error center bold">{errorServer.message}</p></>}
         </>
     )
 }

@@ -74,7 +74,7 @@ const SignUpForm = () => {
             </>
         ) : (
             <>
-                <form action="" onSubmit={handleSubmit(onSubmit)} id="sign-up-form" className="form">      
+                <form action="" onSubmit={handleSubmit(onSubmit)} id="sign-up-form" className="login_form">      
                     <label htmlFor="pseudo" className="form_label bold">Pseudo</label>
                     <input 
                         type="text"
@@ -122,9 +122,9 @@ const SignUpForm = () => {
                     />
                     {errors.confirmPassword && <p className="error bold">{errors.confirmPassword.message}</p>}
                     
-                    {errorServer && <p className="error text_center bold">{errorServer.message}</p>}
+                    {errorServer && <p className="error center bold">{errorServer.message}</p>}
 
-                    <button type="submit" className="form_btn bold">Créer un compte</button>
+                    <button type="submit" className="login_form_btn bold">Créer un compte</button>
                 </form>
             </>
         )}

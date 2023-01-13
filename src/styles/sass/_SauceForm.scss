@@ -1,23 +1,12 @@
-.update_sauce_form {
+.sauce_form {
     margin-top: 0.5rem;
+    
     &_label {
         font-size: 20px;
+        
         &_heat {
             font-family: 'Lato';
             font-size: 18px;
-        }
-    }
-
-    &_input {
-        border-color: $secondary-clr;
-        &:focus {
-            outline: 1px solid $secondary-clr;
-        }
-        
-        &_desc {
-            color: white;
-            font-family: 'Raleway';
-            height: auto;
         }
     }
 
@@ -63,4 +52,3 @@
         }
     }
 }
-
