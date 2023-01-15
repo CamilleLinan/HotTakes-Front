@@ -1,17 +1,33 @@
 @media(max-width: 460px) {
+    .title_home {
+        font-size: 28px !important;
+    }
+    
     .sauces {
         width: 98%;
-        &_list {
-            & li {
-                width: 95% !important;
-            }
+        
+        &_section_name_title {
+            font-size: 25px !important;
+        }
+        
+        &_list li {
+            width: 95% !important;
         }
     }
 }
 
 @media(min-width: 460px) and (max-width: 768px) {
+    .title_home {
+        font-size: 28px !important;
+    }
+    
     .sauces {
         width: 98%!important;
+        
+        &_section_name_title {
+            font-size: 25px !important;
+        }
+        
         &_list {
             justify-content: space-around !important;
             & li {

@@ -59,7 +59,7 @@ const AddSauceForm = () => {
     return ( 
         <section className="bg_section sauce_page">
             <div className="sauce_page_picture_container">
-                {previewPicture && <img src={previewPicture} alt='' className="sauce_page_content_img" />}
+                {previewPicture && <img src={previewPicture} alt='sauce-hottakes-cover' className="sauce_page_content_img" />}
                 <label htmlFor="file"></label>
                     <input 
                         type="file" 

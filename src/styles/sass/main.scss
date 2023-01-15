@@ -10,6 +10,7 @@
 @import 'InputRange';
 @import 'ConfirmModal';
 @import 'ErrorAuth';
+@import 'Footer';
 
 html {
     background-color: $bg-clr;
@@ -17,6 +18,7 @@ html {
     font-size: 18px;
     color: $primary-clr;
     margin: auto;
+    min-height: 100%;
 }
 
 a {

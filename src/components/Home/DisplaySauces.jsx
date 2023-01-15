@@ -50,7 +50,7 @@ const DisplaySauces = () => {
                             <li key={sauce._id}>
                                 <figure className="bg_section card">
                                     <a href={'/sauces/' + sauce._id}>
-                                        <img src={sauce.imageUrl} alt="" className="card_img" />
+                                        <img src={sauce.imageUrl} alt="sauce-hottakes-cover" className="card_img" />
                                         <figcaption className="card_figcaption">
                                             <div className='sauce_ratings sauce_ratings_displaySauce'>
                                                 <HeatScale heat={sauce.heat} />
