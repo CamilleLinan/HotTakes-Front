@@ -50,6 +50,12 @@
         padding: 1rem;
         box-sizing: border-box;
         border-left: 1px solid rgba(128, 128, 128, 0.2);
+
+        &_container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
         
         &_header {
             display: flex;
@@ -108,7 +114,9 @@
 
     &_vote {
         display: flex;
-        align-items: flex-end;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        height: 100%;
         
         &_icon {
             font-size: 20px !important;

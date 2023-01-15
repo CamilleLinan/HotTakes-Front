@@ -105,7 +105,7 @@ const UpdateSauce = ({ propSauceData }) => {
         </div> 
         
         <article className="sauce_page_infos">
-            <div>
+            <div className="sauce_page_infos_container">
             <header className="sauce_page_infos_header">
                 {!modify ? 
                     <> <h1 className="sauce_page_infos_header_title bold">{sauceDataUpdate.name}</h1>
