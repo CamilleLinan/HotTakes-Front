@@ -90,7 +90,7 @@ const UpdateSauce = ({ propSauceData }) => {
 
     return(
      <> <div className="sauce_page_picture_container">
-            <img src={dataPicture} alt="" className="sauce_page_picture_container_img" />
+            <img src={dataPicture} alt="sauce-piquante-hottakes-cover" className="sauce_page_picture_container_img" />
             {modify && <>
                 <label htmlFor="file"></label>
                 <input 

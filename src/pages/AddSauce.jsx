@@ -1,6 +1,7 @@
-import AddSauceForm from "../components/AddSauce/AddSauceForm";
-import Banner from "../components/Layout/Banner";
 import Header from "../components/Layout/Header";
+import Banner from "../components/Layout/Banner";
+import AddSauceForm from "../components/AddSauce/AddSauceForm";
+import Footer from "../components/Layout/Footer";
 
 const AddSauce = () => {
     return ( 
@@ -8,6 +9,7 @@ const AddSauce = () => {
             <Header />
             <Banner />
             <AddSauceForm />
+            <Footer />
         </>
     )
 }
