@@ -30,7 +30,7 @@ li {
 
 button {
     cursor: pointer;
-    font-family: 'Raleway-Medium';
+    font-family: 'Raleway-Bold';
     border: 1px solid $primary-clr;
     border-radius: 0.2rem;
     font-size: 18px;
@@ -38,9 +38,9 @@ button {
     align-self: center;
 }
 
-label {
+label, h1, h2, h3 {
     @include custom-txt;
-    font-family: 'Raleway-Medium';
+    font-family: 'Raleway-Bold';
 }
 
 input, textarea {
@@ -73,7 +73,7 @@ textarea {
 }
 
 .bold {
-    font-family: 'Raleway-Medium';
+    font-family: 'Raleway-Bold';
 }
 
 .center {

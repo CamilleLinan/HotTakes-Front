@@ -1,6 +1,7 @@
 @media(max-width: 768px) {
     .banner_img {
         margin-top: 125px !important;
+        height: 150px !important;
     }
 }
 
@@ -17,7 +18,7 @@
     margin-right: -7px;
     &_img {
         margin-top: 99px;
-        height: 230px;
+        height: 200px;
         width: 100%;
         object-fit: cover;
         filter: brightness(0.9) saturate(0.8);

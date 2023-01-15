@@ -1,5 +1,5 @@
-$primary-clr: rgb(191, 0, 0);
-$secondary-clr: rgba(182, 0, 0, 0.9);
+$primary-clr: rgb(209, 0, 0);
+$secondary-clr: rgba(196, 0, 0, 0.9);
 $tertiary-clr: rgb(170, 170, 170);
 
 $bg-clr: rgb(27, 27, 27);
@@ -15,5 +15,5 @@ $dislike-clr: rgb(172, 37, 37);
 }
 
 @mixin custom-txt {
-    text-shadow: 0 0 5px #ff000074;
+    text-shadow: 0 0 3px #ff000074;
 }
