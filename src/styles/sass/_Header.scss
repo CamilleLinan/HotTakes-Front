@@ -15,10 +15,9 @@
             margin-top: 4.5rem;
             font-size: 15px;
             text-align: center;
+            width: 100%;
         }
         &_nav {
-            width: 100%;
-            display: flex;
             justify-content: space-around !important;
             padding-bottom: 0.3rem !important;
             &_link {
@@ -30,6 +29,13 @@
                 &_2 {
                     margin-right: 1rem !important;
                 }
+            }
+
+            &_text {
+                display: none;
+            }
+            &_icon {
+                font-size: 20px !important;
             }
         }
     }
@@ -92,6 +98,16 @@
             }
             &_2 {
                 margin-right: 2rem;
+            }
+        }
+
+        &_icon {
+            font-size: 0;
+            transition: all 250ms ease-in-out;
+            color: $secondary-clr;
+            @include custom-txt;
+            &:hover {
+                color: $tertiary-clr;
             }
         }
     }
