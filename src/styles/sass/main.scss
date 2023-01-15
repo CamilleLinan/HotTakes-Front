@@ -4,10 +4,12 @@
 @import 'Login';
 @import 'Banner';
 @import 'DisplaySauces';
+@import 'SauceRatings';
 @import 'SaucePage';
-@import 'UpdateSauce';
+@import 'SauceForm';
 @import 'InputRange';
 @import 'ConfirmModal';
+@import 'ErrorAuth';
 
 html {
     background-color: $bg-clr;
@@ -28,15 +30,46 @@ li {
 
 button {
     cursor: pointer;
+    font-family: 'Raleway-Medium';
+    border: 1px solid $primary-clr;
+    border-radius: 0.2rem;
+    font-size: 18px;
+    background-color: $primary-clr;
+    align-self: center;
 }
 
-input {
+label {
+    @include custom-txt;
+    font-family: 'Raleway-Medium';
+}
+
+input, textarea {
+    position: relative;
+    justify-content: center;
+    height: 30px;
+    background-color: rgba(69, 68, 68, 0.386);
+    margin: 0.5rem auto 1rem auto;
+    font-size: 16px;
+    border-radius: 0.2rem;
     font-family: 'Raleway';
     color: white;
+    border: 1px solid $secondary-clr;
+    box-sizing: border-box;
+    &:focus {
+        outline: 1px solid $secondary-clr;
+    }
+}
+
+input[type="file"] {
+    margin: 0 0.2rem 3.5rem 0.2rem;
+    width: 13rem;
+    border: none;
+    background: none;
 }
 
 textarea {
     resize: none;
+    height: auto;
 }
 
 .bold {
@@ -45,4 +78,21 @@ textarea {
 
 .center {
     text-align: center;
+}
+
+.error {
+    margin-top: 0;
+}
+
+.success {
+    color: $like-clr;
+}
+
+.bg_section {
+    @include custom-border;
+    background-color: $bg-section-clr;
+}
+
+.form_input {
+    width: 99%;
 }

@@ -7,3 +7,13 @@ $bg-section-clr: rgba(90, 90, 90, 0.139);
 
 $like-clr: rgb(44, 139, 44);
 $dislike-clr: rgb(172, 37, 37);
+
+@mixin custom-border {
+    border: 1px solid $primary-clr;
+    box-shadow: 0 0 10px #ff000074;
+    border-radius: 0.2rem;
+}
+
+@mixin custom-txt {
+    text-shadow: 0 0 5px #ff000074;
+}

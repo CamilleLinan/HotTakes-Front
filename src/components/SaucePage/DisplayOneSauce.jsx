@@ -9,7 +9,8 @@ const DisplayOneSauce = () => {
     const authCtx = useContext(AuthContext);
 
     const [ sauceData, setSauceData ] = useState([])
-    
+    const [ errorServer, setErrorServer ] = useState('');
+
     const getSauceData = useCallback(async () => {
         await axios ({
             method: 'GET',
@@ -19,22 +20,25 @@ const DisplayOneSauce = () => {
             }
         })
             .then((res) => { setSauceData(res.data) })
-            .catch((err) => console.log(err))
-    
-    }, [id, authCtx.token]);
+            .catch(() => {
+                setErrorServer({ ...errorServer, message: 'Une erreur interne est survenue. Merci de revenir plus tard.' })      
+            });
+    }, [id, authCtx.token, errorServer]);
 
     useEffect(() => {
         getSauceData();
     }, [getSauceData]);
 
     return(
-        <>{sauceData._id === id &&
-            <section className="sauce_page">
-                <div className="sauce_page_figure">
+        <>
+            {sauceData._id === id &&
+                <section className="bg_section sauce_page">
                     <UpdateSauce propSauceData={sauceData} title='Éditer' />
-                </div>
-            </section>
-        } </>
+                </section>
+            }
+
+            {errorServer && <><br /><p className="error center bold">{errorServer.message}</p></>}
+        </>
     )
 }
 

@@ -1,0 +1,17 @@
+.sauce_ratings {
+    align-self: center;
+    margin: 0rem auto 0.2rem auto;
+    font-size: 22px;
+   
+    &_pepper_grey {
+        color: grey;
+    }
+
+    &_displaySauce {
+        font-size: 22px;
+    }
+
+    &_updateSauce {
+        font-size: 22px;
+    }
+}

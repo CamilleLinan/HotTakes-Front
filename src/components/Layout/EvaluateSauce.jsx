@@ -48,7 +48,7 @@ const EvaluateSauce = (props) => {
                 if (err.response.status === 401) {
                     window.alert('Vous devez être connecté pour mettre un vote')
                 } else {
-                    window.alert('Désolé, un problème serveur est survenu')
+                    window.alert('Une erreur interne est survenue. Merci de revenir plus tard.')
                 }
             });
     };
@@ -74,7 +74,7 @@ const EvaluateSauce = (props) => {
                 if (err.response.status === 401) {
                     window.alert('Vous devez être connecté pour mettre un vote')
                 } else {
-                    window.alert('Désolé, un problème serveur est survenu')
+                    window.alert('Une erreur interne est survenue. Merci de revenir plus tard.')
                 }
             });
     };
@@ -100,7 +100,7 @@ const EvaluateSauce = (props) => {
                 if (err.response.status === 401) {
                     window.alert('Vous devez être connecté pour mettre un vote')
                 } else {
-                    window.alert('Désolé, un problème serveur est survenu')
+                    window.alert('Une erreur interne est survenue. Merci de revenir plus tard.')
                 }
             });
     };
@@ -126,7 +126,7 @@ const EvaluateSauce = (props) => {
                 if (err.response.status === 401) {
                     window.alert('Vous devez être connecté pour mettre un vote')
                 } else {
-                    window.alert('Désolé, un problème serveur est survenu')
+                    window.alert('Une erreur interne est survenue. Merci de revenir plus tard.')
                 }
             });
     };

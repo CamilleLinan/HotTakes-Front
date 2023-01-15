@@ -1,16 +1,15 @@
 @media(max-width: 768px) {
     .sauce_page {
-        &_figure {
-            flex-direction: column;
-            width: 60% !important;
-            &_img {
-                display: flex;
-                align-self: center !important;
-                border-right: transparent !important;
-            }
+        flex-direction: column;
+        width: 60% !important;
+        
+        &_picture_container_img {
+            display: flex;
+            align-self: center !important;
+            border-right: transparent !important;
         }
 
-        &_figcaption {
+        &_infos {
             border-top: 1px solid rgba(128, 128, 128, 0.2);
         }
 
@@ -22,58 +21,20 @@
     }
 }
 
-input[type="file"] {
-    margin: 0 0.2rem 3.5rem 0.2rem;
-    width: 13rem;
-}
-
 .sauce_page {
+    position: relative;
+    display: flex;
+    margin: 5rem auto;
+    width: 80%;
+    max-width: 800px;
+    padding: 0;
+
     &_picture_container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-    }
-
-    &_header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        &_title {
-            margin: 0;
-            font-size: 27px;
-            text-shadow: 0 0 5px #ff000074;
-            text-transform: uppercase;
-        }
-        &_icon {
-            margin-top: 0;
-            cursor: pointer;
-            color: $tertiary-clr;
-            font-size: 16px;
-            opacity: 0.6;
-            &:hover {
-                opacity: 1;
-                color: $secondary-clr;
-                text-shadow: 0 0 10px #ff000074;
-            }
-            
-            &_delete {
-                margin-left: 1rem;
-            }
-        }
-    }
-
-    &_figure {
-        position: relative;
-        display: flex;
-        margin: 5rem auto;
-        border: 1px solid $primary-clr;
-        width: 80%;
-        max-width: 800px;
-        padding: 0;
-        box-shadow: 0 0 10px #ff000074;
-        background-color: $bg-section-clr;
-
+        
         &_img {
             display: flex;
             align-self: center;
@@ -82,58 +43,84 @@ input[type="file"] {
         }
     }
 
-    &_figcaption {
+    &_infos {
         display: flex;
         flex-direction: column;
         width: 100%;
         padding: 1rem;
         box-sizing: border-box;
         border-left: 1px solid rgba(128, 128, 128, 0.2);
-    }
 
-    &_vote {
-        display: flex;
-        align-items: flex-end;
-        height: 100%;
-        
-        &_icon {
-            font-size: 20px !important;
-            cursor: pointer;
-        }
-    }
-
-    &_content {
-        &_name {
-            margin-top: 0;
-            margin-bottom: 0;
+        &_container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
+        &_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            &_title {
+                margin: 0;
+                font-size: 27px;
+                text-shadow: 0 0 5px #ff000074;
+                text-transform: uppercase;
+                &_update {
+                    justify-self: center;
+                }
+            }
+            
+            &_icon {
+                margin-top: 0;
+                cursor: pointer;
+                color: $tertiary-clr;
+                font-size: 16px;
+                opacity: 0.6;
+                &:hover {
+                    opacity: 1;
+                    color: $secondary-clr;
+                    text-shadow: 0 0 10px #ff000074;
+                }
+                
+                &_delete {
+                    margin-left: 1rem;
+                }
+            }
+        }
+
         &_manufacturer {
             margin-top: 0.2rem;
             font-size: 17px;
             color: $tertiary-clr;
         }
-        
-        &_heat {
+
+        &_titles {
             margin-bottom: 0.5rem;
             font-size: 20px;
-        }
-        
-        &_desc {
-            &_title {
-                margin-top: 1.5rem;
-                margin-bottom: 0.5rem;
-                font-size: 20px;
-                &_desc {
-                    margin-top: 0;
-                }
-            }
-        
-            &_content {
+            
+            &_desc {
                 margin-top: 0;
-                font-size: 17px;
-                color: $tertiary-clr;
             }
+        }
+
+        &_details {
+            margin-top: 0;
+            font-size: 17px;
+            color: $tertiary-clr;
+        }
+    }
+
+    &_vote {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        height: 100%;
+        
+        &_icon {
+            font-size: 20px !important;
+            cursor: pointer;
         }
     }
 }

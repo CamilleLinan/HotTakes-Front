@@ -9,9 +9,10 @@ import EvaluateSauce from "../Layout/EvaluateSauce";
 const fireIcon = <FontAwesomeIcon icon={faFire} />
 
 const DisplaySauces = () => {
-    const [ saucesData, setSaucesData ] = useState([])
-
     const authCtx = useContext(AuthContext);
+
+    const [ saucesData, setSaucesData ] = useState([])
+    const [ errorServer, setErrorServer ] = useState('');
 
     const getSaucesData = useCallback(async () => {
         await axios ({
@@ -22,9 +23,11 @@ const DisplaySauces = () => {
             }
         })
             .then((res) => { setSaucesData(res.data) })
-            .catch((err) => console.log(err))
+            .catch(() => {
+                setErrorServer({ ...errorServer, message: 'Une erreur interne est survenue. Merci de revenir plus tard.' })      
+            });
     
-    }, [authCtx.token]);
+    }, [authCtx.token, errorServer]);
 
     useEffect(() => {
         getSaucesData();
@@ -38,15 +41,18 @@ const DisplaySauces = () => {
                     <i className="sauces_section_name_icon">{fireIcon}</i>
                     <h2 className="sauces_section_name_title bold">Toutes les sauces</h2>
                 </div>
+                
+                {errorServer && <><br /><p className="error center bold">{errorServer.message}</p></>}
+
                 {saucesData.length > 0 ?
                     <ul className="sauces_list">
                         <>{saucesData.map((sauce, i) => (
                             <li key={sauce._id}>
-                                <figure className="card">
+                                <figure className="bg_section card">
                                     <a href={'/sauces/' + sauce._id}>
                                         <img src={sauce.imageUrl} alt="" className="card_img" />
                                         <figcaption className="card_figcaption">
-                                            <div className='sauce_ratings'>
+                                            <div className='sauce_ratings sauce_ratings_displaySauce'>
                                                 <HeatScale heat={sauce.heat} />
                                             </div>
                                             <h3 className="card_figcaption_title bold">{sauce.name}</h3>

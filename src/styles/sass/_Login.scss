@@ -1,23 +1,15 @@
 @media(max-width: 768px) {
     .login {
-        &_header {
-            &_logo {
-                width: 330px;
-                padding: 0 1rem;
-            }
+        &_header_logo {
+            width: 330px;
+            padding: 0 1rem;
         }
 
-        &_section {
-            &_header {
-                & button {
-                    padding: 1rem 0 !important;
-                }
-            }
+        &_section_header button {
+            padding: 1rem 0 !important;
         }
     }
 }
-
-@media(min-width: 768px) and (max-width: 1200px) {}
 
 .login {
     &_header {
@@ -31,15 +23,15 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 1px solid $primary-clr;
-        box-shadow: 0 0 10px #ff000074;
         width: 47%;
         min-width: 300px;
         max-width: 600px;
         margin: auto;
-        border-radius: 0.2rem;
+        @include custom-border;
+
         &_header {
             width: 100%;
+            
             & button {
                 width: 50%;
                 border: none;
@@ -48,6 +40,7 @@
                 font-size: 20px;
             }
         }
+        
         &_form {
             display: flex;
             flex-direction: column;
@@ -68,51 +61,33 @@
 }
 
 .active {
+    border-radius: 0;
     background-color: $secondary-clr;
 }
 
 .inactive {
+    border-radius: 0;
     color: $primary-clr;
     background-color: transparent;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        background-color: $secondary-clr;
+        color: black;
+    }
 }
 
-// FORM
-
-.form {
+// FORM \\
+.login_form {
     position: relative;
     margin-top: -20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    &_label {
-        text-shadow: 0 0 5px #ff000074;
-    }
-
-    &_input {
-        position: relative;
-        justify-content: center;
-        width: 99%;
-        height: 30px;
-        background-color: rgba(69, 68, 68, 0.386);
-        border: 1px solid $primary-clr;
-        margin: 0.5rem auto 1rem auto;
-        font-size: 16px;
-        border-radius: 0.2rem;
-        &:focus {
-            outline: 1px solid $primary-clr;
-        }
-    }
-
+    
     &_btn {
-        align-self: center;
         margin: 0.1rem auto;
         height: 38px;
         width: 70%;
-        background-color: $secondary-clr;
-        border: 1px solid $primary-clr;
-        border-radius: 0.2rem;
-        font-size: 18px;
     }
 }
 
@@ -126,18 +101,18 @@
 #icon-password {
     &-signup {
         position: absolute;
-        bottom: 25px;
+        bottom: 23px;
         right: 8px;
     }
     &-signin {
         position: absolute;
-        bottom: 25px;
+        bottom: 23px;
         right: 8px;
     }
 
     &-update {
         position: absolute;
-        bottom: 25px;
+        bottom: 23px;
         right: 8px;
     }
 }
