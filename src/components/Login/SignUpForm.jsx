@@ -9,7 +9,6 @@ import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 const hiddenPassword = <FontAwesomeIcon icon={faEyeSlash} />
 const showPassword = <FontAwesomeIcon icon={faEye} />
 
-// Fonction : S'Enregistrer
 const SignUpForm = () => {
 
     const [ formSubmit, setFormSubmit ] = useState();
@@ -47,11 +46,14 @@ const SignUpForm = () => {
         password: '',
     });
 
-    // Fonction de soumission du formulaire
+    // Utilisation de dotenv
+    const API_URL = process.env.REACT_APP_API_URL
+
+    // Soumission du formulaire
     const onSubmit = async (data) => {
         await axios({
             method: "post",
-            url: `http://localhost:5000/api/auth/signup`,
+            url: `${API_URL}/auth/signup`,
             data
         })
             .then(() => {

@@ -61,8 +61,11 @@ const UpdateSauce = ({ propSauceData }) => {
         setDataPicture(newPicture)
     }
 
-    const url = `http://localhost:5000/api/sauces/${propSauceData._id}`
+    // Utilisation de dotenv
+    const API_URL = process.env.REACT_APP_API_URL
+    const url = `${API_URL}/sauces/${propSauceData._id}`
 
+    // Mettre à jour une sauce
     const confirmUpdate = async (e) => {
         e.preventDefault();
         let formData = new FormData();
@@ -73,7 +76,7 @@ const UpdateSauce = ({ propSauceData }) => {
         formData.append('description', sauceDataUpdate.description);
         formData.append('mainPepper', sauceDataUpdate.mainPepper);
         formData.append('image', newDataPicture);
- 
+    
         await axios.put(url, formData, {
             headers: {
                 Authorization: `Bearer ${authCtx.token}`,

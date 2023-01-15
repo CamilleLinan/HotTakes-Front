@@ -9,10 +9,13 @@ import ConfirmModal from "../Layout/ConfirmModal";
 const trashIcon = <FontAwesomeIcon icon={faTrash} />
 
 const DeleteSauce = ({ propSauceId }) => {
-        
+    const authCtx = useContext(AuthContext);    
+
     const [ popUpConfirm, setPopUpConfirm ] = useState(false);
     const [ errorServer, setErrorServer ] = useState('');
     
+    const navigate = useNavigate()
+
     const cancelConfirm = () => {
         setPopUpConfirm(false)
     }
@@ -20,17 +23,17 @@ const DeleteSauce = ({ propSauceId }) => {
     const deleteHandler = () => {
         setPopUpConfirm(true)
     }
-
-    // Utilisation du context
-    const authCtx = useContext(AuthContext);
-    const navigate = useNavigate()
     
+    // Utilisation de dotenv
+    const API_URL = process.env.REACT_APP_API_URL
+
+    // Supprimer une sauce
     const confirmDelete = async (e) => {
         e.preventDefault();
 
         await axios({
             method:'DELETE',
-            url: `http://localhost:5000/api/sauces/${propSauceId}`,
+            url: `${API_URL}/sauces/${propSauceId}`,
             headers: {
                 Authorization: `Bearer ${authCtx.token}`,
             },
