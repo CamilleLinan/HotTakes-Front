@@ -14,14 +14,10 @@ const DisplaySauces = () => {
     const [ saucesData, setSaucesData ] = useState([])
     const [ errorServer, setErrorServer ] = useState('');
 
-    // Utilisation de dotenv
-    const API_URL = process.env.REACT_APP_API_URL
-
-    // Récupérer les sauces
     const getSaucesData = useCallback(async () => {
         await axios ({
             method: 'GET',
-            url: `${API_URL}/sauces`,
+            url: 'http://localhost:5000/api/sauces',
             headers: {
                 Authorization: `Bearer ${authCtx.token}`,
             }
@@ -31,7 +27,7 @@ const DisplaySauces = () => {
                 setErrorServer({ ...errorServer, message: 'Une erreur interne est survenue. Merci de revenir plus tard.' })      
             });
     
-    }, [API_URL, authCtx.token, errorServer]);
+    }, [authCtx.token, errorServer]);
 
     useEffect(() => {
         getSaucesData();

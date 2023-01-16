@@ -11,14 +11,10 @@ const DisplayOneSauce = () => {
     const [ sauceData, setSauceData ] = useState([])
     const [ errorServer, setErrorServer ] = useState('');
 
-    // Utilisation de dotenv
-    const API_URL = process.env.REACT_APP_API_URL
-
-    // Récupérer une sauce avec son ID
     const getSauceData = useCallback(async () => {
         await axios ({
             method: 'GET',
-            url: `${API_URL}/sauces/${id}`,
+            url: `http://localhost:5000/api/sauces/${id}`,
             headers: {
                 Authorization: `Bearer ${authCtx.token}`,
             }
@@ -27,7 +23,7 @@ const DisplayOneSauce = () => {
             .catch(() => {
                 setErrorServer({ ...errorServer, message: 'Une erreur interne est survenue. Merci de revenir plus tard.' })      
             });
-    }, [API_URL, id, authCtx.token, errorServer]);
+    }, [id, authCtx.token, errorServer]);
 
     useEffect(() => {
         getSauceData();

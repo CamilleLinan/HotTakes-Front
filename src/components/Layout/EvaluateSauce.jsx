@@ -27,14 +27,11 @@ const EvaluateSauce = (props) => {
         setDislikeUpdate(props.dislikes);
     }, [props.likes, props.dislikes])
 
-    // Utilisation de dotenv
-    const API_URL = process.env.REACT_APP_API_URL
-
     // Fonction ajouter un like
     const addLike = async () => {
         await axios({
             method: 'POST',
-            url: `${API_URL}/sauces/${sauceId}/like`,
+            url: `http://localhost:5000/api/sauces/${sauceId}/like`,
             headers: {
                 Authorization: `Bearer ${authCtx.token}`,
             },
@@ -60,7 +57,7 @@ const EvaluateSauce = (props) => {
     const removeLike = async () => {
         await axios({
             method: 'POST',
-            url: `${API_URL}/sauces/${sauceId}/like`,
+            url: `http://localhost:5000/api/sauces/${sauceId}/like`,
             headers: {
                 Authorization: `Bearer ${authCtx.token}`,
             },
@@ -86,7 +83,7 @@ const EvaluateSauce = (props) => {
     const addDislike = async () => {
         await axios({
             method: 'POST',
-            url: `${API_URL}/sauces/${sauceId}/dislike`,
+            url: `http://localhost:5000/api/sauces/${sauceId}/dislike`,
             headers: {
                 Authorization: `Bearer ${authCtx.token}`,
             },
@@ -112,7 +109,7 @@ const EvaluateSauce = (props) => {
     const removeDislike = async () => {
         await axios({
             method: 'POST',
-            url: `${API_URL}/sauces/${sauceId}/dislike`,
+            url: `http://localhost:5000/api/sauces/${sauceId}/dislike`,
             headers: {
                 Authorization: `Bearer ${authCtx.token}`,
             },

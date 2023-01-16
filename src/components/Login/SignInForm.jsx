@@ -11,13 +11,17 @@ import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 const hiddenPassword = <FontAwesomeIcon icon={faEyeSlash} />
 const showPassword = <FontAwesomeIcon icon={faEye} />
 
+// Fonction : Se Connecter
 const SignInForm = () => {
-    const authCtx = useContext(AuthContext);
 
     const [ passwordIsVisible, setPasswordIsVisible ] = useState(false);
     const [ errorSignIn, setErrorSignIn ] = useState('');
     const [ errorServer, setErrorServer ] = useState('');
 
+    // Utilisation du context
+    const authCtx = useContext(AuthContext);
+
+    // Utilisation de useNavigate
     const navigate = useNavigate();
 
     // Utilisation de YupResolver
@@ -35,15 +39,12 @@ const SignInForm = () => {
         password: '',
     });
 
-    // Utilisation de dotenv
-    const API_URL = process.env.REACT_APP_API_URL
-
-    // Soumission du formulaire
+    // Fonction de soumission du formulaire
     const onSubmit = async (data) => {
 
         await axios ({
             method: "post",
-            url: `${API_URL}/auth/login`,
+            url: `http://localhost:5000/api/auth/login`,
             data
         })
 

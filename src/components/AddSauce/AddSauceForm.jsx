@@ -16,7 +16,6 @@ const AddSauceForm = () => {
 
     const [ errorServer, setErrorServer ] = useState('');
     
-    // Création d'un aperçu de l'image
     const changeHandlerPicture = (e) => {
         let newPicture;
 
@@ -26,13 +25,10 @@ const AddSauceForm = () => {
         }
         setSaucePicture(e.target.files[0]) 
     }
-    
-    // Utilisation de dotenv
-    const API_URL = process.env.REACT_APP_API_URL
-    const url = `${API_URL}/sauces`
+
+    const url = `http://localhost:5000/api/sauces`
     const navigate = useNavigate()
     
-    // Soumission du formulaire
     const onSubmit = async (e) => {
         e.preventDefault();
 
