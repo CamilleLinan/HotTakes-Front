@@ -2,8 +2,6 @@
 
 + Télécharger ' NodeJS ' si besoin ;
 
-+ Créer un fichier ' .env ' pour remplir les variables d'environnements comme indiquer sur le fichier dev.env ;
-
 + Installer Node et toutes ses dépendances avec ' npm i ' ;
 
 + Lancer le serveur avec ' npm start ' ;
