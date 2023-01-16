@@ -1,7 +1,8 @@
 @media(max-width: 768px) {
     .sauce_page {
         flex-direction: column;
-        width: 60% !important;
+        width: 80% !important;
+        margin: 2rem auto !important;
         
         &_picture_container_img {
             display: flex;
